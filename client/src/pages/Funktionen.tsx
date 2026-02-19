@@ -90,7 +90,7 @@ export default function Funktionen() {
 
   const comparisonData = [
     { feature: "Zeitaufwand pro Monat", manual: "5-10 Stunden", finrobotics: "30 Minuten", steuerberater: "1 Stunde" },
-    { feature: "Kosten pro Monat", manual: "€0 (aber Zeit)", finrobotics: "ab €39", steuerberater: "€100-300" },
+    { feature: "Kosten pro Monat", manual: "€0 (aber Zeit)", finrobotics: "ab €49", steuerberater: "€100-300" },
     { feature: "Automatisierung", manual: "Keine", finrobotics: "Vollständig", steuerberater: "Teilweise" },
     { feature: "Echtzeit-Einblicke", manual: "Nein", finrobotics: "Ja", steuerberater: "Verzögert" },
     { feature: "ELSTER-Export", manual: "Manuell", finrobotics: "Ein Klick", steuerberater: "Durch Berater" },
