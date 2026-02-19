@@ -49,7 +49,7 @@ export default function Header() {
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/kontakt">Login</Link>
+            <Link href="/kontakt">Kontakt</Link>
           </Button>
           <a
             href="tel:+491721084289"
@@ -94,7 +94,7 @@ export default function Header() {
               ))}
               <div className="flex flex-col gap-2 pt-4 border-t border-border">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="/kontakt">Login</Link>
+                  <Link href="/kontakt">Kontakt</Link>
                 </Button>
                 <a
                   href="tel:+491721084289"
