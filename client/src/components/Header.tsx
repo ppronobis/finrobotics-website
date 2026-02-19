@@ -52,11 +52,11 @@ export default function Header() {
             <Link href="/kontakt">Login</Link>
           </Button>
           <a
-            href="tel:+49PLATZHALTER"
+            href="tel:+491721084289"
             className="flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
           >
             <Phone className="h-4 w-4" />
-            +49 PLATZHALTER
+            +49 172 1084289
           </a>
         </div>
 
@@ -97,11 +97,11 @@ export default function Header() {
                   <Link href="/kontakt">Login</Link>
                 </Button>
                 <a
-                  href="tel:+49PLATZHALTER"
+                  href="tel:+491721084289"
                   className="flex items-center justify-center gap-2 text-sm font-medium text-foreground py-2"
                 >
                   <Phone className="h-4 w-4" />
-                  +49 PLATZHALTER
+                  +49 172 1084289
                 </a>
               </div>
             </nav>

@@ -99,7 +99,7 @@ export default function HeroChatbot() {
       <div>
         Volle Chat-Funktion kommt bald!{" "}
         <a
-          href="https://wa.me/PLATZHALTER"
+          href="https://wa.me/491721084289"
           target="_blank"
           rel="noopener noreferrer"
           className="underline font-medium text-[#25D366]"
