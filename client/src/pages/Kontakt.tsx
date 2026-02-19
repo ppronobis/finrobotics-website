@@ -24,12 +24,32 @@ export default function Kontakt() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    // Formulardaten sammeln
+    const formData = new FormData(e.currentTarget);
+    const firstName = formData.get("firstName") as string;
+    const lastName = formData.get("lastName") as string;
+    const email = formData.get("email") as string;
+    const company = formData.get("company") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
+
+    // mailto-Fallback: E-Mail-Client öffnen mit vorausgefüllten Daten
+    const mailtoSubject = encodeURIComponent(subject || "Kontaktanfrage über finrobotics.de");
+    const mailtoBody = encodeURIComponent(
+      `Name: ${firstName} ${lastName}\n` +
+      `E-Mail: ${email}\n` +
+      (company ? `Unternehmen: ${company}\n` : "") +
+      `\n${message}`
+    );
+    
+    window.location.href = `mailto:paul.pronobis@finrobotics.de?subject=${mailtoSubject}&body=${mailtoBody}`;
+    
+    // Kurz warten, dann Erfolgsmeldung zeigen
+    await new Promise(resolve => setTimeout(resolve, 500));
     
     setIsSubmitting(false);
     setIsSubmitted(true);
-    toast.success("Nachricht gesendet! Wir melden uns in Kürze.");
+    toast.success("E-Mail-Programm geöffnet! Alternativ schreib uns direkt an paul.pronobis@finrobotics.de");
   };
 
   const contactInfo = [
@@ -92,9 +112,13 @@ export default function Kontakt() {
                     {isSubmitted ? (
                       <div className="text-center py-12">
                         <CheckCircle className="h-16 w-16 text-secondary mx-auto mb-4" />
-                        <h3 className="text-xl font-semibold mb-2">Nachricht gesendet!</h3>
+                        <h3 className="text-xl font-semibold mb-2">Dein E-Mail-Programm wurde geöffnet!</h3>
                         <p className="text-muted-foreground mb-6">
-                          Vielen Dank für deine Nachricht. Wir melden uns innerhalb von 24 Stunden bei dir.
+                          Bitte sende die vorausgefüllte E-Mail ab. Falls dein E-Mail-Programm sich nicht geöffnet hat, 
+                          schreib uns direkt an{" "}
+                          <a href="mailto:paul.pronobis@finrobotics.de" className="text-secondary hover:underline">
+                            paul.pronobis@finrobotics.de
+                          </a>
                         </p>
                         <Button variant="outline" onClick={() => setIsSubmitted(false)}>
                           Weitere Nachricht senden
@@ -105,33 +129,34 @@ export default function Kontakt() {
                         <div className="grid md:grid-cols-2 gap-4">
                           <div className="space-y-2">
                             <Label htmlFor="firstName">Vorname</Label>
-                            <Input id="firstName" placeholder="Max" required />
+                            <Input id="firstName" name="firstName" placeholder="Max" required />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="lastName">Nachname</Label>
-                            <Input id="lastName" placeholder="Mustermann" required />
+                            <Input id="lastName" name="lastName" placeholder="Mustermann" required />
                           </div>
                         </div>
                         
                         <div className="space-y-2">
                           <Label htmlFor="email">E-Mail</Label>
-                          <Input id="email" type="email" placeholder="max@beispiel.de" required />
+                          <Input id="email" name="email" type="email" placeholder="max@beispiel.de" required />
                         </div>
                         
                         <div className="space-y-2">
                           <Label htmlFor="company">Unternehmen (optional)</Label>
-                          <Input id="company" placeholder="Dein Unternehmen" />
+                          <Input id="company" name="company" placeholder="Dein Unternehmen" />
                         </div>
                         
                         <div className="space-y-2">
                           <Label htmlFor="subject">Betreff</Label>
-                          <Input id="subject" placeholder="Worum geht es?" required />
+                          <Input id="subject" name="subject" placeholder="Worum geht es?" required />
                         </div>
                         
                         <div className="space-y-2">
                           <Label htmlFor="message">Nachricht</Label>
                           <Textarea
                             id="message"
+                            name="message"
                             placeholder="Deine Nachricht an uns..."
                             rows={5}
                             required
