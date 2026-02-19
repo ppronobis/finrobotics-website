@@ -112,7 +112,7 @@ export default function UeberUns() {
                 transition={{ duration: 0.5 }}
               >
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663028763845/ifeOfleJkEMXAWiP.png"
+                  src="/images/paul-pronobis-team.png"
                   alt="KI-Automatisierung"
                   className="rounded-xl shadow-lg"
                 />

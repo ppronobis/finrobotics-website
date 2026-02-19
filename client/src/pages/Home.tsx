@@ -289,7 +289,7 @@ export default function Home() {
                 className="w-full lg:w-[45%] order-first lg:order-last"
               >
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663028763845/GETqqFkbMjvWrDHk.jpg"
+                  src="/images/paul-pronobis.webp"
                   alt="Prof. Dr. Paul Pronobis und Dipl.-Wirtsch.-Inf. Tobias Lämmle – Gründer von Finrobotics"
                   className="rounded-xl lg:rounded-l-xl lg:rounded-r-none shadow-lg w-full h-64 md:h-80 lg:h-full object-cover"
                 />
@@ -930,7 +930,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663028763845/AVzVOkKOiepRKCSP.png"
+                  src="/images/finrobotics-dashboard.png"
                   alt="Steuerberater-Integration"
                   className="max-w-sm rounded-xl shadow-lg"
                 />
