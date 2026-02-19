@@ -22,7 +22,7 @@ export default function UeberUns() {
       linkedin: "https://linkedin.com/in/paulpronobis",
     },
     {
-      name: "Tobi",
+      name: "Tobias Lämmle",
       role: "CTO & Co-Founder",
       description: "Verantwortlich für die technische Architektur und Entwicklung. Experte für KI-Systeme und Cloud-Infrastruktur.",
       linkedin: "#",
