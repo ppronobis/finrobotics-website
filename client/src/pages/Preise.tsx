@@ -16,7 +16,7 @@ export default function Preise() {
   const plans = [
     {
       name: "Starter",
-      price: "49",
+      price: "99",
       description: "Für Selbstständige mit wenigen Transaktionen",
       features: [
         "Bis 50 Transaktionen/Monat",
@@ -36,7 +36,7 @@ export default function Preise() {
     },
     {
       name: "Professional",
-      price: "99",
+      price: "199",
       description: "Für aktive Selbstständige",
       features: [
         "Unbegrenzte Transaktionen",
@@ -55,8 +55,8 @@ export default function Preise() {
       featured: true,
     },
     {
-      name: "Business",
-      price: "199",
+      name: "Kanzlei",
+      price: "349",
       description: "Für kleine Unternehmen",
       features: [
         "Alles aus Professional",
@@ -92,7 +92,7 @@ export default function Preise() {
     },
     {
       question: "Gibt es Rabatte für jährliche Zahlung?",
-      answer: "Ja, bei jährlicher Zahlung sparst du 2 Monate. Der Starter-Plan kostet dann €490/Jahr statt €588, der Professional-Plan €990/Jahr statt €1.188.",
+      answer: "Ja, bei jährlicher Zahlung sparst du 2 Monate. Der Starter-Plan kostet dann €990/Jahr statt €1.188, der Professional-Plan €1.990/Jahr statt €2.388.",
     },
     {
       question: "Wie sicher sind meine Daten?",

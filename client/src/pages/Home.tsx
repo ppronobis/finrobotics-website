@@ -764,10 +764,10 @@ export default function Home() {
 
                   {/* Preis */}
                   <div className="mb-2">
-                    <span className="text-lg text-muted-foreground line-through mr-2">99€/Monat</span>
+                    <span className="text-lg text-muted-foreground line-through mr-2">199€/Monat</span>
                   </div>
                   <div className="mb-1">
-                    <span className="text-5xl font-bold text-secondary">49€</span>
+                    <span className="text-5xl font-bold text-secondary">99€</span>
                     <span className="text-muted-foreground text-lg">/Monat</span>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">Für Beta-Nutzer dauerhaft gesichert</p>
@@ -775,7 +775,7 @@ export default function Home() {
                   {/* Vergleichs-Anker */}
                   <div className="bg-muted/50 rounded-lg px-4 py-3 mb-8 flex items-center gap-2">
                     <Info className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Zum Vergleich: Ein Buchhaltungsbüro kostet ab 149€/Monat</span>
+                    <span className="text-sm text-muted-foreground">Zum Vergleich: Ein Buchhaltungsbüro kostet ab 350€/Monat</span>
                   </div>
 
                   {/* Features */}
@@ -893,7 +893,7 @@ export default function Home() {
                     <span className="px-3 py-1 text-xs font-semibold bg-secondary text-white rounded-full">Wir sind hier</span>
                   </div>
                   <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-2 mt-2">Finrobotics</p>
-                  <p className="text-3xl font-bold text-secondary mb-1">49€</p>
+                  <p className="text-3xl font-bold text-secondary mb-1">99€</p>
                   <p className="text-xs text-muted-foreground">/Monat</p>
                   <p className="text-sm text-foreground font-medium mt-3">KI erledigt die Arbeit</p>
                 </div>
@@ -901,7 +901,7 @@ export default function Home() {
                 {/* Buchhaltungsbüro */}
                 <div className="text-center p-6 rounded-xl">
                   <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Buchhaltungsbüro</p>
-                  <p className="text-2xl font-bold text-muted-foreground/60 mb-1">ab 149€</p>
+                  <p className="text-2xl font-bold text-muted-foreground/60 mb-1">ab 350€</p>
                   <p className="text-xs text-muted-foreground">/Monat</p>
                   <p className="text-sm text-muted-foreground mt-3">Jemand anderes macht es</p>
                 </div>

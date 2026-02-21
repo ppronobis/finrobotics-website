@@ -12,7 +12,7 @@ interface ChatMessage {
 
 const SCRIPTED_RESPONSES: Record<string, string> = {
   "Was kostet Finrobotics?":
-    "Finrobotics startet ab 49\u00A0\u20AC/Monat für Selbstständige und Unternehmer. Du sparst im Vergleich zum Steuerberater oft mehrere hundert Euro im Jahr – bei weniger Aufwand.\n\nWillst du mehr Details? Schreib uns direkt per WhatsApp! 💬",
+    "Finrobotics startet ab 99\u00A0\u20AC/Monat für Selbstständige und Unternehmer. Du sparst im Vergleich zum Steuerberater oft mehrere hundert Euro im Jahr – bei weniger Aufwand.\n\nWillst du mehr Details? Schreib uns direkt per WhatsApp! 💬",
   "Wie funktioniert die Belegerfassung?":
     "Ganz einfach: Du lädst deine Belege hoch (Foto oder PDF) und unsere KI erkennt automatisch Betrag, Datum, Kategorie und Umsatzsteuer. Die Daten landen direkt in deiner Buchhaltung – kein Abtippen mehr. ✨",
   "Ist Finrobotics DATEV-kompatibel?":
