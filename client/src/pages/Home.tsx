@@ -77,7 +77,7 @@ export default function Home() {
                     </a>
                   </Button>
                   <Button size="lg" variant="outline" asChild>
-                    <a href="#kontakt">
+                    <a href="https://cal.com/paul-pronobis-0704/30min" target="_blank" rel="noopener noreferrer">
                       <CalendarCheck className="mr-2 h-4 w-4" />
                       Erstgespräch buchen
                     </a>
