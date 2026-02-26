@@ -20,6 +20,7 @@ import {
   Mail,
   Layers,
   ShieldCheck,
+  Link,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -40,9 +41,9 @@ const onboardingSteps = [
   {
     step: "1",
     icon: UserPlus,
-    title: "Mandant anlegen",
+    title: "Mandant einrichten",
     description:
-      "Rechtsform wählen (GmbH, eK, Freiberufler), Kontenrahmen (SKR03/04) und USt-Rhythmus konfigurieren. Der Agent wird automatisch vorkonfiguriert.",
+      "Sie legen den Mandanten an und wählen die wichtigsten Einstellungen. FinRobotics richtet den Rest für Sie ein.",
     details: ["GmbH / eK / Freiberufler", "SKR03 oder SKR04", "Monatliche / Quartals-USt"],
   },
   {
@@ -50,42 +51,42 @@ const onboardingSteps = [
     icon: Database,
     title: "DATEV verbinden",
     description:
-      "Bestehende DATEV-Daten werden automatisch importiert. Der Agent kennt sofort die Buchungshistorie des Mandanten.",
-    details: ["Automatischer Datenimport", "Buchungshistorie übernehmen", "Keine Doppelerfassung"],
+      "Wir docken an Ihre DATEV-Welt an. Vorhandene Daten werden übernommen, ohne dass Sie alles neu aufsetzen müssen.",
+    details: ["Import vorhandener Daten", "Bisherige Buchungen als Grundlage", "Keine Doppelerfassung"],
   },
   {
     step: "3",
     icon: Bot,
-    title: "AI-Buchhalter arbeitet",
+    title: "Vorarbeit läuft automatisch",
     description:
-      "Der Agent bucht selbstständig, lernt mandantenspezifische Muster und meldet Anomalien direkt an Sie.",
-    details: ["95%+ Automatisierung", "Anomalie-Alerts", "Lernfähig pro Mandant"],
+      "Belege werden erkannt, kontiert und als Buchungsvorschläge vorbereitet. Sie prüfen nur noch das Wesentliche.",
+    details: ["Weniger Routinearbeit", "Hinweise bei Auffälligkeiten", "Lernt je Mandant mit"],
   },
 ];
 
 const comparisonRows = [
   {
-    feature: "Setup-Zeit",
-    butler: "Stunden–Tage",
-    sage: "Tage–Wochen",
-    finrobotics: "3 Minuten",
+    feature: "Einrichtung",
+    butler: "Stunden bis Tage",
+    sage: "Tage bis Wochen",
+    finrobotics: "In wenigen Minuten",
     butlerCheck: false,
     sageCheck: false,
     finroboticsCheck: true,
     textOnly: true,
   },
   {
-    feature: "AI-Automatisierung",
+    feature: "Entlastung im Alltag",
     butler: "Teilweise",
-    sage: "Minimal",
-    finrobotics: "95%+ (Agent-basiert)",
+    sage: "Gering",
+    finrobotics: "Sehr hoch",
     butlerCheck: false,
     sageCheck: false,
     finroboticsCheck: true,
     textOnly: true,
   },
   {
-    feature: "Pro Mandant isoliert",
+    feature: "Eigener Bereich pro Mandant",
     butler: false,
     sage: false,
     finrobotics: true,
@@ -95,17 +96,17 @@ const comparisonRows = [
     textOnly: false,
   },
   {
-    feature: "Steuerberater-Dashboard",
-    butler: "Basic",
-    sage: "Basic",
-    finrobotics: "Multi-Agent Kontrolle",
+    feature: "Übersicht für die Kanzlei",
+    butler: "Grundfunktionen",
+    sage: "Grundfunktionen",
+    finrobotics: "Alles zentral im Blick",
     butlerCheck: false,
     sageCheck: false,
     finroboticsCheck: true,
     textOnly: true,
   },
   {
-    feature: "Lernfähig pro Mandant",
+    feature: "Lernt je Mandant mit",
     butler: false,
     sage: false,
     finrobotics: true,
@@ -119,27 +120,27 @@ const comparisonRows = [
 const agentFeatures = [
   {
     icon: Lock,
-    title: "Isoliert",
+    title: "Klar getrennt",
     description:
-      "Jeder Mandant erhält einen eigenen Agent-Container. Keine Datenvermischung, keine Cross-Contamination — GoBD-konform by design.",
+      "Jeder Mandant hat seinen eigenen Bereich. Das verhindert Verwechslungen und schafft Sicherheit bei sensiblen Daten.",
   },
   {
     icon: ShieldCheck,
-    title: "Vorkonfiguriert",
+    title: "Schnell startklar",
     description:
-      "GoBD-Anforderungen, Kontenrahmen und steuerliche Regeln sind bereits eingebettet. Kein manuelles Setup nötig.",
+      "Wichtige Regeln und Einstellungen sind vorbereitet. Sie starten ohne langes Einrichten.",
   },
   {
     icon: BrainCircuit,
-    title: "Lernfähig",
+    title: "Wird mit der Zeit besser",
     description:
-      "Der Agent merkt sich mandantenspezifische Buchungsmuster und wird mit jeder Transaktion präziser.",
+      "FinRobotics merkt sich typische Buchungen pro Mandant und liefert immer passendere Vorschläge.",
   },
   {
     icon: Eye,
-    title: "Überwacht",
+    title: "Sie behalten die Hoheit",
     description:
-      "Sie behalten über Ihr zentrales Dashboard jederzeit den Überblick. Anomalien und kritische Buchungen werden proaktiv gemeldet.",
+      "Im Dashboard sehen Sie alle Mandanten auf einen Blick und greifen ein, wenn etwas geprüft werden soll.",
   },
 ];
 
@@ -163,17 +164,14 @@ export default function FuerSteuerberater() {
                   Für Steuerberater & Kanzleien
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground mb-6">
-                  In 3 Minuten hat Ihr Mandant einen{" "}
-                  <span className="text-secondary">AI-Buchhalter.</span>
+                  Mehr Zeit für Beratung.
                   <br />
-                  <span className="text-3xl md:text-4xl lg:text-5xl text-muted-foreground font-medium">
-                    Sie behalten die Kontrolle.
-                  </span>
+                  <span className="text-secondary">Weniger Routine in der Buchhaltung.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
-                  Steuerberater deployen FinRobotics für jeden Mandanten per One-Click — isoliert,
-                  GoBD-konform und DATEV-ready. Ihr zentrales Dashboard gibt Ihnen Überblick über
-                  alle Mandanten-Agents.
+                  Sie und Ihre Mandanten arbeiten weiter mit DATEV. FinRobotics übernimmt die
+                  Vorarbeit — von der Belegerkennung bis zum fertigen Buchungsvorschlag. Alles
+                  passt in Ihren bestehenden Workflow.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-white" asChild>
@@ -210,7 +208,7 @@ export default function FuerSteuerberater() {
                   </div>
                   <div className="trust-badge">
                     <Lock className="h-4 w-4 text-secondary" />
-                    Agent-Isolation
+                    Eigener Bereich pro Mandant
                   </div>
                 </div>
               </motion.div>
@@ -234,9 +232,9 @@ export default function FuerSteuerberater() {
                       </div>
                       <div className="space-y-3">
                         {[
-                          { name: "Müller GmbH", status: "Aktiv", bookings: "142 Buchungen" },
-                          { name: "Schmidt eK", status: "Aktiv", bookings: "87 Buchungen" },
-                          { name: "Weber Freelancer", status: "Aktiv", bookings: "53 Buchungen" },
+                          { name: "Müller GmbH", status: "Aktiv", bookings: "142 Buchungsvorschläge" },
+                          { name: "Schmidt eK", status: "Aktiv", bookings: "87 Buchungsvorschläge" },
+                          { name: "Weber Freelancer", status: "Aktiv", bookings: "53 Buchungsvorschläge" },
                           { name: "+ Mandant anlegen", status: "", bookings: "" },
                         ].map((client, i) => (
                           <div
@@ -292,9 +290,9 @@ export default function FuerSteuerberater() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="section-title">Mandant in 3 Schritten onboarden</h2>
+              <h2 className="section-title">Mandant in 3 Schritten startklar</h2>
               <p className="section-subtitle mx-auto">
-                Von der Mandantenanlage bis zum laufenden AI-Buchhalter in unter 3 Minuten.
+                Von der Einrichtung bis zu fertigen Buchungsvorschlägen in wenigen Minuten.
               </p>
             </motion.div>
 
@@ -340,6 +338,56 @@ export default function FuerSteuerberater() {
           </div>
         </section>
 
+        {/* DATEV Integration */}
+        <section className="section">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mx-auto"
+            >
+              <Card className="border-secondary/30 bg-secondary/5">
+                <CardContent className="p-8 md:p-10">
+                  <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-5">
+                    <Link className="h-4 w-4" />
+                    DATEV bleibt Ihr Zuhause
+                  </div>
+                  <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+                    FinRobotics ergänzt DATEV — es ersetzt DATEV nicht.
+                  </h2>
+                  <p className="text-muted-foreground text-lg mb-6">
+                    Ihre Mandanten und Sie arbeiten weiter mit DATEV. FinRobotics übernimmt die
+                    Vorarbeit und liefert fertige Buchungsvorschläge direkt zurück in DATEV
+                    Unternehmen Online.
+                  </p>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <div className="rounded-lg bg-background/70 border p-4">
+                      <p className="text-sm font-medium mb-1">1. Belege kommen rein</p>
+                      <p className="text-sm text-muted-foreground">
+                        Mandanten laden Belege wie gewohnt hoch.
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-background/70 border p-4">
+                      <p className="text-sm font-medium mb-1">2. FinRobotics bereitet vor</p>
+                      <p className="text-sm text-muted-foreground">
+                        KI erkennt, kontiert und erstellt Buchungsvorschläge.
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-background/70 border p-4">
+                      <p className="text-sm font-medium mb-1">3. Zurück in DATEV</p>
+                      <p className="text-sm text-muted-foreground">
+                        Übergabe über offizielle DATEV-Schnittstellen.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Comparison Table */}
         <section className="section">
           <div className="container">
@@ -352,7 +400,7 @@ export default function FuerSteuerberater() {
             >
               <h2 className="section-title">FinRobotics im Vergleich</h2>
               <p className="section-subtitle mx-auto">
-                Warum moderne Kanzleien auf Agent-basierte Buchhaltung setzen.
+                Klarer Mehrwert für Kanzleien, die DATEV nutzen und Routinearbeit reduzieren wollen.
               </p>
             </motion.div>
 
@@ -367,7 +415,7 @@ export default function FuerSteuerberater() {
                 <thead>
                   <tr>
                     <th className="text-left p-4 text-sm font-medium text-muted-foreground w-[30%]">
-                      Feature
+                      Bereich
                     </th>
                     <th className="p-4 text-center text-sm font-medium text-muted-foreground">
                       BuchhaltungsButler
@@ -379,7 +427,7 @@ export default function FuerSteuerberater() {
                       <div className="inline-flex flex-col items-center">
                         <span className="text-sm font-semibold text-secondary">FinRobotics</span>
                         <span className="text-xs text-secondary/70 font-normal">
-                          Agent-basiert
+                          Für DATEV-Kanzleien
                         </span>
                       </div>
                     </th>
@@ -457,13 +505,12 @@ export default function FuerSteuerberater() {
               >
                 <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-6">
                   <Bot className="h-4 w-4" />
-                  Agent-per-Mandant
+                  Ein Bereich pro Mandant
                 </div>
-                <h2 className="section-title">Ein eigener Agent für jeden Mandanten</h2>
+                <h2 className="section-title">Jeder Mandant arbeitet in seinem eigenen Bereich</h2>
                 <p className="text-muted-foreground mb-8 text-lg">
-                  Kein geteilter Pool, kein Datenmix: Jeder Mandant erhält einen vollständig
-                  isolierten AI-Accounting-Agent mit eigenem Gedächtnis, eigenen Regeln und eigener
-                  Buchungshistorie. Sie steuern alle Agents zentral.
+                  So bleiben Daten sauber getrennt und Buchungen eindeutig zugeordnet. Sie steuern
+                  alles zentral und vermeiden Verwechslungen im Tagesgeschäft.
                 </p>
 
                 <motion.div
@@ -523,9 +570,21 @@ export default function FuerSteuerberater() {
                   {/* Agents */}
                   <div className="grid grid-cols-3 gap-2">
                     {[
-                      { label: "Müller GmbH", color: "from-secondary/10 to-secondary/20", border: "border-secondary/30" },
-                      { label: "Schmidt eK", color: "from-secondary/10 to-secondary/20", border: "border-secondary/30" },
-                      { label: "Weber FR", color: "from-secondary/10 to-secondary/20", border: "border-secondary/30" },
+                      {
+                        label: "Müller GmbH",
+                        color: "from-secondary/10 to-secondary/20",
+                        border: "border-secondary/30",
+                      },
+                      {
+                        label: "Schmidt eK",
+                        color: "from-secondary/10 to-secondary/20",
+                        border: "border-secondary/30",
+                      },
+                      {
+                        label: "Weber FR",
+                        color: "from-secondary/10 to-secondary/20",
+                        border: "border-secondary/30",
+                      },
                     ].map((agent, i) => (
                       <Card key={i} className={`bg-gradient-to-b ${agent.color} border ${agent.border}`}>
                         <CardContent className="p-3 text-center">
@@ -544,7 +603,7 @@ export default function FuerSteuerberater() {
 
                   <div className="text-center">
                     <span className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full">
-                      Vollständig isoliert • Keine Datenvermischung
+                      Klar getrennt • Keine Datenvermischung
                     </span>
                   </div>
                 </div>
@@ -567,8 +626,8 @@ export default function FuerSteuerberater() {
                 Demo für Ihre Kanzlei vereinbaren
               </h2>
               <p className="text-primary-foreground/80 mb-8 text-lg">
-                Erfahren Sie in einem persönlichen Gespräch, wie FinRobotics Ihre Kanzlei effizienter
-                macht und wie Sie Ihren Mandanten einen echten Mehrwert bieten können.
+                Erfahren Sie in einem persönlichen Gespräch, wie FinRobotics Ihr Team bei der
+                Vorarbeit entlastet und dabei sauber in Ihre DATEV-Prozesse passt.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
