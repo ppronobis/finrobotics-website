@@ -164,10 +164,10 @@ export default function FuerSteuerberater() {
                   Für Steuerberater & Kanzleien
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground mb-6">
-                  KI-Agenten für die Steuerberatung der Zukunft
+                  Digitale Mitarbeiter für die Steuerberatung der Zukunft
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
-                  In 3 Minuten hat Ihr Mandant einen persönlichen KI-Berater. Proaktiv. Per WhatsApp oder E-Mail. Im Auftrag Ihrer Kanzlei.
+                  Ein KI-Agent pro Mandant — Ihr digitaler Mitarbeiter, der selbstständig kommuniziert, Belege einfordert und bucht. Per WhatsApp oder E-Mail. Im Auftrag Ihrer Kanzlei.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
