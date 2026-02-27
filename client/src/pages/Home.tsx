@@ -1018,6 +1018,32 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Steuerberater Banner */}
+        <section className="section bg-primary">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center max-w-2xl mx-auto"
+            >
+              <h2 className="text-3xl md:text-4xl font-semibold text-primary-foreground mb-4">
+                Sie sind Steuerberater?
+              </h2>
+              <p className="text-primary-foreground/80 mb-8 text-lg">
+                Erfahren Sie, wie FinRobotics die Mandantenkommunikation Ihrer Kanzlei mit digitalen Mitarbeitern automatisiert.
+              </p>
+              <Link href="/fuer-steuerberater">
+                <Button size="lg" variant="outline" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
+                  Mehr erfahren
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="section">
           <div className="container">
