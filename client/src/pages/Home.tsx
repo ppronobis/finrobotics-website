@@ -275,7 +275,7 @@ export default function Home() {
                   className="relative pl-6 border-l-4 border-secondary"
                 >
                   <p className="text-lg md:text-xl font-medium italic text-foreground/90 leading-relaxed">
-                    „Unser Ziel: Finrobotics versteht deine Belege besser als du selbst."
+                    „Einmal eingerichtet, erledigt die KI den Rest. Autonom."
                   </p>
                 </motion.blockquote>
               </div>
