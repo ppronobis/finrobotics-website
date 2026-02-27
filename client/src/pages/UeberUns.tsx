@@ -10,7 +10,6 @@ import {
   Lightbulb,
   ArrowRight,
   Linkedin,
-  Mail,
 } from "lucide-react";
 
 export default function UeberUns() {
@@ -18,14 +17,33 @@ export default function UeberUns() {
     {
       name: "Prof. Dr. Paul Pronobis",
       role: "CEO & Gründer",
-      description: "Professor für Accounting und Künstliche Intelligenz an der Freien Universität Bozen. Experte für Rechnungswesen und KI-Anwendungen im Finanzbereich.",
+      description: "Professor für Accounting und KI an der Freien Universität Bozen.",
       linkedin: "https://linkedin.com/in/paulpronobis",
+      image: "/images/paul-pronobis-team.png",
     },
     {
       name: "Tobias Lämmle",
-      role: "CTO & Co-Founder",
-      description: "Verantwortlich für die technische Architektur und Entwicklung. Experte für KI-Systeme und Cloud-Infrastruktur.",
+      role: "Chief AI Officer & Co-Founder",
+      description:
+        "Senior Architect, 18 Jahre IT-Erfahrung, ML/KI im Finanzsektor. Associate Prof ML an der ESCP Paris, Dozent IHK Karlsruhe.",
       linkedin: "#",
+      image: "/images/tobias-laemmle-team.png",
+    },
+    {
+      name: "Johannes Huhn",
+      role: "Chief Technology Officer",
+      description:
+        "Doktorand FU Bozen, Expertise Analytics & Enterprise Software. HANA, Java, SQL, Python. Product Owner Erfahrung.",
+      linkedin: "#",
+      image: "/team-huhn.png",
+    },
+    {
+      name: "Martin Kusterer",
+      role: "Chief Operations Officer",
+      description:
+        "Data Engineering & KI-Spezialist. Zertifiziert: Master Professional Technical Management (IHK), BDP, Big Data Engineer, Business Data Analyst.",
+      linkedin: "#",
+      image: "/team-kusterer.png",
     },
   ];
 
@@ -174,7 +192,7 @@ export default function UeberUns() {
               </p>
             </motion.div>
             
-            <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
               {team.map((member, index) => (
                 <motion.div
                   key={index}
@@ -185,11 +203,11 @@ export default function UeberUns() {
                 >
                   <Card className="h-full">
                     <CardContent className="p-6">
-                      <div className="w-20 h-20 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-4">
-                        <span className="text-2xl font-bold text-secondary">
-                          {member.name.split(" ").map(n => n[0]).join("")}
-                        </span>
-                      </div>
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border border-border"
+                      />
                       <h3 className="text-xl font-semibold text-center mb-1">{member.name}</h3>
                       <p className="text-secondary text-sm text-center mb-4">{member.role}</p>
                       <p className="text-muted-foreground text-sm text-center mb-4">{member.description}</p>
@@ -201,12 +219,6 @@ export default function UeberUns() {
                           className="p-2 rounded-md bg-muted hover:bg-muted/80 transition-colors"
                         >
                           <Linkedin className="h-4 w-4 text-muted-foreground" />
-                        </a>
-                        <a
-                          href={`mailto:${member.name.toLowerCase().replace(/\s/g, ".")}@finrobotics.de`}
-                          className="p-2 rounded-md bg-muted hover:bg-muted/80 transition-colors"
-                        >
-                          <Mail className="h-4 w-4 text-muted-foreground" />
                         </a>
                       </div>
                     </CardContent>
