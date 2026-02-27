@@ -4,143 +4,144 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import {
-  UserPlus,
-  Database,
-  Bot,
-  Check,
-  X,
   ArrowRight,
-  Shield,
   BadgeCheck,
-  Lock,
-  LayoutDashboard,
-  BrainCircuit,
-  Eye,
+  Bot,
+  Calendar,
   CalendarCheck,
+  Check,
+  Clock,
+  FileText,
+  Globe,
+  Lock,
   Mail,
-  Layers,
-  ShieldCheck,
-  Link,
+  MessageSquare,
+  Send,
+  Server,
+  Shield,
+  UserPlus,
+  Users,
+  X,
 } from "lucide-react";
 
-const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 },
-};
-
-const staggerContainer = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
+const painPoints = [
+  {
+    icon: FileText,
+    title: "Fehlende Belege nachfordern",
+    description:
+      "Belege fehlen regelmäßig — und Ihr Team muss jeden Mandanten manuell erinnern.",
   },
-};
+  {
+    icon: MessageSquare,
+    title: "Statusfragen beantworten",
+    description:
+      "\"Wo steht meine Buchhaltung?\" gehört zu den häufigsten Anfragen in der Kanzlei.",
+  },
+  {
+    icon: Clock,
+    title: "Fristenerinnerungen senden",
+    description:
+      "Fristen im Blick behalten und Erinnerungen verschicken kostet täglich wertvolle Zeit.",
+  },
+];
 
 const onboardingSteps = [
   {
     step: "1",
     icon: UserPlus,
-    title: "Mandant einrichten",
+    title: "Mandant anlegen",
     description:
-      "Sie legen den Mandanten an und wählen die wichtigsten Einstellungen. FinRobotics richtet den Rest für Sie ein.",
-    details: ["GmbH / eK / Freiberufler", "SKR03 oder SKR04", "Monatliche / Quartals-USt"],
+      "Rechtsform, Kontenrahmen und USt-Rhythmus auswählen — der Rest ist vorbereitet.",
+    details: ["Rechtsform", "Kontenrahmen", "USt-Rhythmus"],
   },
   {
     step: "2",
-    icon: Database,
-    title: "DATEV verbinden",
+    icon: MessageSquare,
+    title: "Kommunikationskanal wählen",
     description:
-      "Wir docken an Ihre DATEV-Welt an. Vorhandene Daten werden übernommen, ohne dass Sie alles neu aufsetzen müssen.",
-    details: ["Import vorhandener Daten", "Bisherige Buchungen als Grundlage", "Keine Doppelerfassung"],
+      "WhatsApp oder E-Mail einrichten — je nachdem, wie Ihr Mandant am liebsten kommuniziert.",
+    details: ["WhatsApp verbinden", "E-Mail aktivieren", "Branding der Kanzlei"],
   },
   {
     step: "3",
     icon: Bot,
-    title: "Vorarbeit läuft automatisch",
+    title: "Agent arbeitet proaktiv",
     description:
-      "Belege werden erkannt, kontiert und als Buchungsvorschläge vorbereitet. Sie prüfen nur noch das Wesentliche.",
-    details: ["Weniger Routinearbeit", "Hinweise bei Auffälligkeiten", "Lernt je Mandant mit"],
-  },
-];
-
-const comparisonRows = [
-  {
-    feature: "Einrichtung",
-    butler: "Stunden bis Tage",
-    sage: "Tage bis Wochen",
-    finrobotics: "In wenigen Minuten",
-    butlerCheck: false,
-    sageCheck: false,
-    finroboticsCheck: true,
-    textOnly: true,
-  },
-  {
-    feature: "Entlastung im Alltag",
-    butler: "Teilweise",
-    sage: "Gering",
-    finrobotics: "Sehr hoch",
-    butlerCheck: false,
-    sageCheck: false,
-    finroboticsCheck: true,
-    textOnly: true,
-  },
-  {
-    feature: "Eigener Bereich pro Mandant",
-    butler: false,
-    sage: false,
-    finrobotics: true,
-    butlerCheck: false,
-    sageCheck: false,
-    finroboticsCheck: true,
-    textOnly: false,
-  },
-  {
-    feature: "Übersicht für die Kanzlei",
-    butler: "Grundfunktionen",
-    sage: "Grundfunktionen",
-    finrobotics: "Alles zentral im Blick",
-    butlerCheck: false,
-    sageCheck: false,
-    finroboticsCheck: true,
-    textOnly: true,
-  },
-  {
-    feature: "Lernt je Mandant mit",
-    butler: false,
-    sage: false,
-    finrobotics: true,
-    butlerCheck: false,
-    sageCheck: false,
-    finroboticsCheck: true,
-    textOnly: false,
+      "Der Agent kommuniziert automatisch, fordert Belege nach und hält Mandanten auf Kurs.",
+    details: ["Belege nachfordern", "Fristen erinnern", "Status-Updates senden"],
   },
 ];
 
 const agentFeatures = [
   {
-    icon: Lock,
-    title: "Klar getrennt",
+    icon: Send,
+    title: "Proaktiv",
     description:
-      "Jeder Mandant hat seinen eigenen Bereich. Das verhindert Verwechslungen und schafft Sicherheit bei sensiblen Daten.",
+      "Meldet sich von selbst bei Mandanten — keine manuelle Nachverfolgung mehr.",
   },
   {
-    icon: ShieldCheck,
-    title: "Schnell startklar",
+    icon: MessageSquare,
+    title: "Interaktiv",
     description:
-      "Wichtige Regeln und Einstellungen sind vorbereitet. Sie starten ohne langes Einrichten.",
+      "Mandanten antworten direkt per WhatsApp oder E-Mail und erhalten sofort Rückmeldung.",
   },
   {
-    icon: BrainCircuit,
-    title: "Wird mit der Zeit besser",
+    icon: Bot,
+    title: "Lernfähig",
     description:
-      "FinRobotics merkt sich typische Buchungen pro Mandant und liefert immer passendere Vorschläge.",
+      "Erkennt Muster je Mandant und verbessert Buchungsvorschläge mit jeder Interaktion.",
   },
   {
-    icon: Eye,
-    title: "Sie behalten die Hoheit",
+    icon: Users,
+    title: "Isoliert",
     description:
-      "Im Dashboard sehen Sie alle Mandanten auf einen Blick und greifen ein, wenn etwas geprüft werden soll.",
+      "Jeder Mandant hat einen eigenen Agenten — ohne Datenvermischung zwischen Mandaten.",
+  },
+];
+
+const securityFeatures = [
+  { icon: Server, title: "Deutsche Rechenzentren" },
+  { icon: Shield, title: "DSGVO-konform" },
+  { icon: Lock, title: "Verschlüsselte Kommunikation" },
+  { icon: BadgeCheck, title: "GoBD-konform" },
+  { icon: Globe, title: "Keine US-Cloud" },
+];
+
+const comparisonRows = [
+  {
+    feature: "Proaktive Mandantenkommunikation",
+    classic: false,
+    finrobotics: true,
+  },
+  {
+    feature: "24/7 Erreichbarkeit",
+    classic: false,
+    finrobotics: true,
+  },
+  {
+    feature: "WhatsApp & E-Mail Integration",
+    classic: false,
+    finrobotics: true,
+  },
+  {
+    feature: "Mandantenindividuelle Agenten",
+    classic: false,
+    finrobotics: true,
+  },
+  {
+    feature: "Setup-Zeit",
+    classic: "Stunden–Tage",
+    finrobotics: "3 Minuten",
+  },
+  {
+    feature: "Lernfähig pro Mandant",
+    classic: false,
+    finrobotics: true,
+  },
+  {
+    feature: "DATEV-kompatibel",
+    classic: "Teilweise",
+    finrobotics: true,
   },
 ];
 
@@ -150,7 +151,6 @@ export default function FuerSteuerberater() {
       <Header />
 
       <main className="flex-1">
-        {/* Hero */}
         <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30">
           <div className="container py-16 md:py-24 lg:py-32">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -160,19 +160,16 @@ export default function FuerSteuerberater() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-6">
-                  <Layers className="h-4 w-4" />
+                  <Bot className="h-4 w-4" />
                   Für Steuerberater & Kanzleien
                 </div>
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground mb-6">
-                  Mehr Zeit für Beratung.
-                  <br />
-                  <span className="text-secondary">Weniger Routine in der Buchhaltung.</span>
+                  KI-Agenten für die Steuerberatung der Zukunft
                 </h1>
-                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
-                  Sie und Ihre Mandanten arbeiten weiter mit DATEV. FinRobotics übernimmt die
-                  Vorarbeit — von der Belegerkennung bis zum fertigen Buchungsvorschlag. Alles
-                  passt in Ihren bestehenden Workflow.
+                <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl">
+                  In 3 Minuten hat Ihr Mandant einen persönlichen KI-Berater. Proaktiv. Per WhatsApp oder E-Mail. Im Auftrag Ihrer Kanzlei.
                 </p>
+
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-white" asChild>
                     <a href="mailto:paul@finrobotics.de?subject=Demo%20Steuerberater">
@@ -192,7 +189,6 @@ export default function FuerSteuerberater() {
                   </Button>
                 </div>
 
-                {/* Trust Badges */}
                 <div className="flex flex-wrap gap-3">
                   <div className="trust-badge">
                     <BadgeCheck className="h-4 w-4 text-secondary" />
@@ -207,80 +203,67 @@ export default function FuerSteuerberater() {
                     DSGVO-konform
                   </div>
                   <div className="trust-badge">
-                    <Lock className="h-4 w-4 text-secondary" />
-                    Eigener Bereich pro Mandant
+                    <Server className="h-4 w-4 text-secondary" />
+                    Deutsche Server
                   </div>
                 </div>
               </motion.div>
 
-              {/* Visual: Dashboard-Mockup */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="flex justify-center lg:justify-end"
               >
-                <div className="w-full max-w-md">
-                  <Card className="border-secondary/20 shadow-2xl bg-card">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-2 mb-4">
-                        <LayoutDashboard className="h-5 w-5 text-secondary" />
-                        <span className="font-semibold text-sm">Kanzlei-Dashboard</span>
-                        <span className="ml-auto text-xs text-muted-foreground bg-secondary/10 text-secondary px-2 py-0.5 rounded-full">
-                          Live
-                        </span>
+                <Card className="w-full max-w-md border-secondary/20 shadow-2xl">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-2 mb-5">
+                      <div className="h-8 w-8 rounded-lg bg-secondary/10 flex items-center justify-center">
+                        <Bot className="h-4 w-4 text-secondary" />
                       </div>
-                      <div className="space-y-3">
-                        {[
-                          { name: "Müller GmbH", status: "Aktiv", bookings: "142 Buchungsvorschläge" },
-                          { name: "Schmidt eK", status: "Aktiv", bookings: "87 Buchungsvorschläge" },
-                          { name: "Weber Freelancer", status: "Aktiv", bookings: "53 Buchungsvorschläge" },
-                          { name: "+ Mandant anlegen", status: "", bookings: "" },
-                        ].map((client, i) => (
-                          <div
-                            key={i}
-                            className={`flex items-center gap-3 p-3 rounded-lg ${
-                              i === 3
-                                ? "border-2 border-dashed border-secondary/30 text-secondary cursor-pointer hover:bg-secondary/5 transition-colors"
-                                : "bg-muted/50"
-                            }`}
-                          >
-                            {i < 3 ? (
-                              <>
-                                <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center">
-                                  <Bot className="h-4 w-4 text-secondary" />
-                                </div>
-                                <div className="flex-1">
-                                  <div className="text-sm font-medium">{client.name}</div>
-                                  <div className="text-xs text-muted-foreground">
-                                    {client.bookings}
-                                  </div>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                  <div className="w-2 h-2 rounded-full bg-green-500" />
-                                  <span className="text-xs text-muted-foreground">
-                                    {client.status}
-                                  </span>
-                                </div>
-                              </>
-                            ) : (
-                              <div className="flex items-center gap-2 text-sm font-medium w-full justify-center">
-                                <UserPlus className="h-4 w-4" />
-                                {client.name}
-                              </div>
-                            )}
+                      <div>
+                        <p className="text-sm font-semibold">Kanzlei Müller Dashboard</p>
+                        <p className="text-xs text-muted-foreground">Kommunikation & Nachverfolgung</p>
+                      </div>
+                      <span className="ml-auto text-xs px-2 py-1 rounded-full bg-green-100 text-green-700">
+                        Live
+                      </span>
+                    </div>
+
+                    <div className="space-y-3">
+                      {[
+                        {
+                          name: "Weber GmbH",
+                          channel: "WhatsApp aktiv",
+                          status: "letzte Nachricht: vor 2h",
+                        },
+                        {
+                          name: "Schneider eK",
+                          channel: "E-Mail aktiv",
+                          status: "letzte Nachricht: vor 37m",
+                        },
+                        {
+                          name: "Meyer Consulting",
+                          channel: "WhatsApp aktiv",
+                          status: "Antwort ausstehend seit 1d",
+                        },
+                      ].map((entry, index) => (
+                        <div key={index} className="rounded-lg bg-muted/40 border p-3">
+                          <div className="flex items-center justify-between">
+                            <p className="text-sm font-medium">{entry.name}</p>
+                            <span className="text-[11px] text-secondary font-medium">{entry.channel}</span>
                           </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                          <p className="text-xs text-muted-foreground mt-1">{entry.status}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* 3-Step Onboarding */}
         <section className="section bg-muted/30">
           <div className="container">
             <motion.div
@@ -290,43 +273,141 @@ export default function FuerSteuerberater() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="section-title">Mandant in 3 Schritten startklar</h2>
+              <h2 className="section-title">80% der Mandantenanfragen sind Routine</h2>
               <p className="section-subtitle mx-auto">
-                Von der Einrichtung bis zu fertigen Buchungsvorschlägen in wenigen Minuten.
+                Ihr Team verbringt Stunden mit Kommunikation statt mit Steuerberatung.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8 relative">
-              {/* Verbindungslinien Desktop */}
-              <div className="hidden md:block absolute top-14 left-[33%] w-[16%] h-0.5 bg-gradient-to-r from-secondary/40 to-secondary/40" />
-              <div className="hidden md:block absolute top-14 left-[66%] w-[16%] h-0.5 bg-gradient-to-r from-secondary/40 to-secondary/40" />
-
-              {onboardingSteps.map((step, index) => (
+            <div className="grid md:grid-cols-3 gap-6">
+              {painPoints.map((pain, index) => (
                 <motion.div
-                  key={index}
+                  key={pain.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="relative"
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="h-full border-border hover:border-secondary/40 transition-colors duration-300">
+                  <Card className="h-full">
+                    <CardContent className="p-6">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <pain.icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-2">{pain.title}</h3>
+                      <p className="text-sm text-muted-foreground">{pain.description}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <h2 className="section-title">Ihr Agent kommuniziert. Im Namen Ihrer Kanzlei.</h2>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+              <Card className="border-[#25D366]/30 shadow-lg">
+                <CardContent className="p-0 overflow-hidden">
+                  <div className="bg-[#128C7E] text-white px-4 py-3 flex items-center justify-between">
+                    <div>
+                      <p className="text-sm font-semibold">FinRobotics im Auftrag von Kanzlei Müller</p>
+                      <p className="text-xs text-white/80">zuletzt aktiv gerade eben</p>
+                    </div>
+                    <MessageSquare className="h-4 w-4" />
+                  </div>
+                  <div className="bg-[#ECE5DD] p-4 space-y-3 min-h-[280px]">
+                    <div className="max-w-[85%] ml-auto bg-[#DCF8C6] rounded-xl rounded-br-sm px-3 py-2 text-sm shadow-sm">
+                      Guten Morgen Herr Weber, uns fehlt noch der Bewirtungsbeleg vom 14.02. Können Sie den kurz abfotografieren?
+                    </div>
+                    <div className="max-w-[85%] bg-white rounded-xl rounded-bl-sm px-3 py-2 text-sm shadow-sm">
+                      📸 Bewirtungsbeleg_Restaurant_Löwen.jpg
+                    </div>
+                    <div className="max-w-[85%] ml-auto bg-[#DCF8C6] rounded-xl rounded-br-sm px-3 py-2 text-sm shadow-sm">
+                      Perfekt, 142,50€ Restaurant Löwen, als Bewirtungskosten verbucht. ✅
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-lg">
+                <CardContent className="p-0 overflow-hidden">
+                  <div className="bg-muted/60 border-b px-4 py-3">
+                    <p className="text-xs text-muted-foreground">Von</p>
+                    <p className="text-sm font-medium">buchhaltung@kanzlei-mueller.finrobotics.de</p>
+                    <p className="text-xs text-muted-foreground mt-2">Betreff</p>
+                    <p className="text-sm font-medium">Fehlender Bewirtungsbeleg vom 14.02.</p>
+                  </div>
+                  <div className="p-4 text-sm text-foreground space-y-3 min-h-[280px]">
+                    <p>Guten Morgen Herr Weber,</p>
+                    <p>
+                      für die vollständige Buchhaltung fehlt uns noch der Bewirtungsbeleg vom 14.02.
+                    </p>
+                    <p>
+                      Antworten Sie einfach auf diese E-Mail mit dem Beleg-Foto. Wir erfassen den Beleg automatisch und ordnen ihn direkt zu.
+                    </p>
+                    <p>
+                      Vielen Dank und beste Grüße<br />
+                      FinRobotics im Auftrag von Kanzlei Müller
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            <p className="text-center text-muted-foreground mt-8">
+              WhatsApp oder E-Mail — Ihre Mandanten wählen den bevorzugten Kanal.
+            </p>
+          </div>
+        </section>
+
+        <section className="section bg-muted/30">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <h2 className="section-title">In 3 Schritten live</h2>
+            </motion.div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {onboardingSteps.map((step, index) => (
+                <motion.div
+                  key={step.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="h-full">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3 mb-4">
-                        <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-lg font-bold flex-shrink-0">
+                        <div className="w-9 h-9 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-semibold">
                           {step.step}
                         </div>
-                        <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center">
-                          <step.icon className="h-5 w-5 text-secondary" />
+                        <div className="w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center">
+                          <step.icon className="h-4 w-4 text-secondary" />
                         </div>
                       </div>
-                      <h3 className="text-lg font-semibold mb-2">{step.title}</h3>
-                      <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
+                      <h3 className="font-semibold mb-2">{step.title}</h3>
+                      <p className="text-sm text-muted-foreground mb-4">{step.description}</p>
                       <ul className="space-y-1.5">
-                        {step.details.map((detail, i) => (
-                          <li key={i} className="flex items-center gap-2 text-sm">
-                            <Check className="h-3.5 w-3.5 text-secondary flex-shrink-0" />
-                            <span className="text-muted-foreground">{detail}</span>
+                        {step.details.map((detail) => (
+                          <li key={detail} className="flex items-center gap-2 text-sm text-muted-foreground">
+                            <Check className="h-3.5 w-3.5 text-secondary" />
+                            {detail}
                           </li>
                         ))}
                       </ul>
@@ -338,57 +419,6 @@ export default function FuerSteuerberater() {
           </div>
         </section>
 
-        {/* DATEV Integration */}
-        <section className="section">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="max-w-4xl mx-auto"
-            >
-              <Card className="border-secondary/30 bg-secondary/5">
-                <CardContent className="p-8 md:p-10">
-                  <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-5">
-                    <Link className="h-4 w-4" />
-                    DATEV bleibt Ihr Zuhause
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-                    FinRobotics ergänzt DATEV — es ersetzt DATEV nicht.
-                  </h2>
-                  <p className="text-muted-foreground text-lg mb-6">
-                    Ihre Mandanten und Sie arbeiten weiter mit DATEV. FinRobotics übernimmt die
-                    Vorarbeit und liefert fertige Buchungsvorschläge direkt zurück in DATEV
-                    Unternehmen Online.
-                  </p>
-                  <div className="grid md:grid-cols-3 gap-4">
-                    <div className="rounded-lg bg-background/70 border p-4">
-                      <p className="text-sm font-medium mb-1">1. Belege kommen rein</p>
-                      <p className="text-sm text-muted-foreground">
-                        Mandanten laden Belege wie gewohnt hoch.
-                      </p>
-                    </div>
-                    <div className="rounded-lg bg-background/70 border p-4">
-                      <p className="text-sm font-medium mb-1">2. FinRobotics bereitet vor</p>
-                      <p className="text-sm text-muted-foreground">
-                        KI erkennt, kontiert und erstellt Buchungsvorschläge.
-                      </p>
-                    </div>
-                    <div className="rounded-lg bg-background/70 border p-4">
-                      <p className="text-sm font-medium mb-1">3. Zurück in DATEV</p>
-                      <p className="text-sm text-muted-foreground">
-                        Übergabe über offizielle DATEV-Schnittstellen.
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Comparison Table */}
         <section className="section">
           <div className="container">
             <motion.div
@@ -398,221 +428,33 @@ export default function FuerSteuerberater() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="section-title">FinRobotics im Vergleich</h2>
-              <p className="section-subtitle mx-auto">
-                Klarer Mehrwert für Kanzleien, die DATEV nutzen und Routinearbeit reduzieren wollen.
-              </p>
+              <h2 className="section-title">Was den FinRobotics Agent besonders macht</h2>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="overflow-x-auto"
-            >
-              <table className="w-full min-w-[640px] border-collapse">
-                <thead>
-                  <tr>
-                    <th className="text-left p-4 text-sm font-medium text-muted-foreground w-[30%]">
-                      Bereich
-                    </th>
-                    <th className="p-4 text-center text-sm font-medium text-muted-foreground">
-                      BuchhaltungsButler
-                    </th>
-                    <th className="p-4 text-center text-sm font-medium text-muted-foreground">
-                      Sage
-                    </th>
-                    <th className="p-4 text-center">
-                      <div className="inline-flex flex-col items-center">
-                        <span className="text-sm font-semibold text-secondary">FinRobotics</span>
-                        <span className="text-xs text-secondary/70 font-normal">
-                          Für DATEV-Kanzleien
-                        </span>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row, index) => (
-                    <tr
-                      key={index}
-                      className={`border-t border-border ${index % 2 === 0 ? "bg-muted/20" : ""}`}
-                    >
-                      <td className="p-4 text-sm font-medium text-foreground">{row.feature}</td>
-                      <td className="p-4 text-center">
-                        {row.textOnly ? (
-                          <span className="text-sm text-muted-foreground">{row.butler as string}</span>
-                        ) : (
-                          <div className="flex justify-center">
-                            <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center">
-                              <X className="h-3.5 w-3.5 text-destructive" />
-                            </div>
-                          </div>
-                        )}
-                      </td>
-                      <td className="p-4 text-center">
-                        {row.textOnly ? (
-                          <span className="text-sm text-muted-foreground">{row.sage as string}</span>
-                        ) : (
-                          <div className="flex justify-center">
-                            <div className="w-6 h-6 rounded-full bg-destructive/10 flex items-center justify-center">
-                              <X className="h-3.5 w-3.5 text-destructive" />
-                            </div>
-                          </div>
-                        )}
-                      </td>
-                      <td className="p-4 text-center bg-secondary/5 border-l-2 border-r-2 border-secondary/20">
-                        {row.textOnly ? (
-                          <span className="text-sm font-semibold text-secondary">
-                            {row.finrobotics as string}
-                          </span>
-                        ) : (
-                          <div className="flex justify-center">
-                            <div className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center">
-                              <Check className="h-3.5 w-3.5 text-secondary" />
-                            </div>
-                          </div>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-                <tfoot>
-                  <tr className="border-t border-secondary/20">
-                    <td className="p-4" />
-                    <td className="p-4" />
-                    <td className="p-4" />
-                    <td className="p-4 bg-secondary/5 border-l-2 border-r-2 border-b-2 border-secondary/20 rounded-b-lg text-center">
-                      <span className="text-xs text-secondary font-medium">Beste Wahl</span>
-                    </td>
-                  </tr>
-                </tfoot>
-              </table>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Agent-per-Mandant Feature Section */}
-        <section className="section bg-muted/30">
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-6">
-                  <Bot className="h-4 w-4" />
-                  Ein Bereich pro Mandant
-                </div>
-                <h2 className="section-title">Jeder Mandant arbeitet in seinem eigenen Bereich</h2>
-                <p className="text-muted-foreground mb-8 text-lg">
-                  So bleiben Daten sauber getrennt und Buchungen eindeutig zugeordnet. Sie steuern
-                  alles zentral und vermeiden Verwechslungen im Tagesgeschäft.
-                </p>
-
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {agentFeatures.map((feature, index) => (
                 <motion.div
-                  variants={staggerContainer}
-                  initial="initial"
-                  whileInView="animate"
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="grid sm:grid-cols-2 gap-4"
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
                 >
-                  {agentFeatures.map((feature, index) => (
-                    <motion.div key={index} variants={fadeInUp}>
-                      <Card className="h-full border-border hover:border-secondary/40 transition-colors duration-300">
-                        <CardContent className="p-5">
-                          <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center mb-3">
-                            <feature.icon className="h-5 w-5 text-secondary" />
-                          </div>
-                          <h3 className="font-semibold mb-1.5">{feature.title}</h3>
-                          <p className="text-muted-foreground text-sm">{feature.description}</p>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
-
-              {/* Visual: Agent Architecture */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="flex justify-center"
-              >
-                <div className="w-full max-w-sm space-y-3">
-                  {/* Dashboard Hub */}
-                  <Card className="border-primary/30 bg-gradient-to-r from-primary/5 to-primary/10 shadow-md">
-                    <CardContent className="p-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                          <LayoutDashboard className="h-5 w-5 text-primary" />
-                        </div>
-                        <div>
-                          <div className="font-semibold text-sm">Ihr Kanzlei-Dashboard</div>
-                          <div className="text-xs text-muted-foreground">
-                            Zentraler Überblick & Kontrolle
-                          </div>
-                        </div>
+                  <Card className="h-full">
+                    <CardContent className="p-6">
+                      <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                        <feature.icon className="h-5 w-5 text-primary" />
                       </div>
+                      <h3 className="font-semibold mb-2">{feature.title}</h3>
+                      <p className="text-sm text-muted-foreground">{feature.description}</p>
                     </CardContent>
                   </Card>
-
-                  {/* Connector */}
-                  <div className="flex justify-center">
-                    <div className="w-0.5 h-6 bg-border" />
-                  </div>
-
-                  {/* Agents */}
-                  <div className="grid grid-cols-3 gap-2">
-                    {[
-                      {
-                        label: "Müller GmbH",
-                        color: "from-secondary/10 to-secondary/20",
-                        border: "border-secondary/30",
-                      },
-                      {
-                        label: "Schmidt eK",
-                        color: "from-secondary/10 to-secondary/20",
-                        border: "border-secondary/30",
-                      },
-                      {
-                        label: "Weber FR",
-                        color: "from-secondary/10 to-secondary/20",
-                        border: "border-secondary/30",
-                      },
-                    ].map((agent, i) => (
-                      <Card key={i} className={`bg-gradient-to-b ${agent.color} border ${agent.border}`}>
-                        <CardContent className="p-3 text-center">
-                          <div className="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center mx-auto mb-2">
-                            <Bot className="h-4 w-4 text-secondary" />
-                          </div>
-                          <div className="text-xs font-medium leading-tight">{agent.label}</div>
-                          <div className="text-[10px] text-secondary mt-1 flex items-center justify-center gap-1">
-                            <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                            Aktiv
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-
-                  <div className="text-center">
-                    <span className="text-xs text-muted-foreground bg-muted px-3 py-1 rounded-full">
-                      Klar getrennt • Keine Datenvermischung
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="section bg-primary text-primary-foreground">
           <div className="container">
             <motion.div
@@ -620,39 +462,110 @@ export default function FuerSteuerberater() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center max-w-2xl mx-auto"
+              className="text-center mb-12"
             >
-              <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-                Demo für Ihre Kanzlei vereinbaren
-              </h2>
-              <p className="text-primary-foreground/80 mb-8 text-lg">
-                Erfahren Sie in einem persönlichen Gespräch, wie FinRobotics Ihr Team bei der
-                Vorarbeit entlastet und dabei sauber in Ihre DATEV-Prozesse passt.
+              <h2 className="text-3xl md:text-4xl font-semibold mb-4">Ihre Daten. In Deutschland. Geschützt.</h2>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+              {securityFeatures.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  className="rounded-xl border border-white/20 bg-white/5 p-5 text-center"
+                >
+                  <item.icon className="h-6 w-6 mx-auto mb-3" />
+                  <p className="text-sm font-medium text-primary-foreground/90">{item.title}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <h2 className="section-title">Klassische Software vs. FinRobotics Agent</h2>
+            </motion.div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[680px] border-collapse">
+                <thead>
+                  <tr className="border-b">
+                    <th className="text-left p-4 text-sm text-muted-foreground">Feature</th>
+                    <th className="p-4 text-sm text-muted-foreground">Klassische Software</th>
+                    <th className="p-4 text-sm text-secondary font-semibold">FinRobotics</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row) => (
+                    <tr key={row.feature} className="border-b last:border-b-0">
+                      <td className="p-4 text-sm font-medium">{row.feature}</td>
+                      <td className="p-4 text-center text-sm text-muted-foreground">
+                        {typeof row.classic === "boolean" ? (
+                          row.classic ? (
+                            <Check className="h-4 w-4 mx-auto text-green-600" />
+                          ) : (
+                            <X className="h-4 w-4 mx-auto text-red-500" />
+                          )
+                        ) : (
+                          row.classic
+                        )}
+                      </td>
+                      <td className="p-4 text-center text-sm font-medium text-foreground">
+                        {typeof row.finrobotics === "boolean" ? (
+                          row.finrobotics ? (
+                            <Check className="h-4 w-4 mx-auto text-green-600" />
+                          ) : (
+                            <X className="h-4 w-4 mx-auto text-red-500" />
+                          )
+                        ) : (
+                          row.finrobotics
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section className="section bg-slate-900 text-white">
+          <div className="container text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-2xl mx-auto"
+            >
+              <h2 className="text-3xl md:text-4xl font-semibold mb-4">Demo für Ihre Kanzlei vereinbaren</h2>
+              <p className="text-white/75 mb-8 text-lg">
+                In einem persönlichen Gespräch zeigen wir Ihnen, wie FinRobotics in Ihre Kanzlei passt und welche Mandate zuerst profitieren.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="bg-secondary hover:bg-secondary/90 text-white border-0"
-                  asChild
-                >
+                <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground" asChild>
                   <a href="mailto:paul@finrobotics.de?subject=Demo%20Steuerberater">
-                    <Mail className="mr-2 h-4 w-4" />
-                    Demo vereinbaren
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                    Demo vereinbaren <ArrowRight className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
-                  asChild
-                >
+                <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
                   <a
                     href="https://cal.com/paul-pronobis-0704/30min"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <CalendarCheck className="mr-2 h-4 w-4" />
+                    <Calendar className="mr-2 h-4 w-4" />
                     Erstgespräch buchen
                   </a>
                 </Button>
