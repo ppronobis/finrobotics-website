@@ -39,7 +39,7 @@ export default function Footer() {
                 <rect width="32" height="32" rx="7" fill="url(#logoGradFooter)"/>
                 <path d="M9 8h14v3H12.5v4h8v3h-8v6H9V8z" fill="white"/>
               </svg>
-              <span className="text-lg font-semibold text-foreground">Finrobotics</span>
+              <span className="text-lg font-semibold text-foreground">FinRobotics</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
               KI-native Buchhaltung für Selbstständige und Unternehmer in Deutschland.
@@ -121,7 +121,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Finrobotics GmbH. Spin-off der Freien Universität Bozen.
+            © {currentYear} FinRobotics GmbH. Spin-off der Freien Universität Bozen.
           </p>
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span className="flex items-center gap-1">

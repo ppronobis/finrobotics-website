@@ -53,18 +53,18 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   
-  /* Finrobotics Brand Colors */
+  /* FinRobotics Brand Colors */
   --color-navy: oklch(0.28 0.05 250);
   --color-teal: oklch(0.55 0.15 175);
   --color-success: oklch(0.62 0.17 155);
 }
 
 :root {
-  /* Finrobotics Primary - Deep Navy Blue */
+  /* FinRobotics Primary - Deep Navy Blue */
   --primary: oklch(0.28 0.05 250);
   --primary-foreground: oklch(0.98 0.005 250);
   
-  /* Finrobotics Secondary - Teal */
+  /* FinRobotics Secondary - Teal */
   --secondary: oklch(0.55 0.15 175);
   --secondary-foreground: oklch(0.98 0.005 175);
   
@@ -99,7 +99,7 @@
   --input: oklch(0.90 0.01 250);
   --ring: oklch(0.55 0.15 175);
   
-  /* Charts - Finrobotics palette */
+  /* Charts - FinRobotics palette */
   --chart-1: oklch(0.28 0.05 250);
   --chart-2: oklch(0.55 0.15 175);
   --chart-3: oklch(0.62 0.17 155);
@@ -225,7 +225,7 @@
     }
   }
   
-  /* Finrobotics Custom Components */
+  /* FinRobotics Custom Components */
   .section {
     @apply py-16 md:py-24;
   }

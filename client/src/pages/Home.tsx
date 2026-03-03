@@ -72,7 +72,7 @@ export default function Home() {
                   <span className="text-secondary">Autopilot.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
-                  Finrobotics sortiert deine Belege, klassifiziert Ausgaben und bereitet alles automatisch für deine Steuererklärung vor.
+                  FinRobotics sortiert deine Belege, klassifiziert Ausgaben und bereitet alles automatisch für deine Steuererklärung vor.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button size="lg" className="bg-[#209173] hover:bg-[#1a7a60] text-white" asChild>
@@ -138,7 +138,7 @@ export default function Home() {
                 <ArrowRight className="h-5 w-5 text-secondary" />
               </div>
 
-              {/* Linke Karte: Ohne Finrobotics */}
+              {/* Linke Karte: Ohne FinRobotics */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -151,7 +151,7 @@ export default function Home() {
                       <div className="w-8 h-8 rounded-full bg-destructive/10 flex items-center justify-center">
                         <span className="text-destructive text-sm font-bold">✕</span>
                       </div>
-                      <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Ohne Finrobotics</span>
+                      <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Ohne FinRobotics</span>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-5">
                       Stunden mit Papierkram statt mit deinem Business
@@ -184,7 +184,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Rechte Karte: Mit Finrobotics */}
+              {/* Rechte Karte: Mit FinRobotics */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -197,7 +197,7 @@ export default function Home() {
                       <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
                         <Check className="h-4 w-4 text-white" />
                       </div>
-                      <span className="text-sm font-semibold text-white/80 uppercase tracking-wide">Mit Finrobotics</span>
+                      <span className="text-sm font-semibold text-white/80 uppercase tracking-wide">Mit FinRobotics</span>
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-5">
                       Buchhaltung erledigt sich, während du arbeitest
@@ -234,7 +234,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="section-title">Die Menschen hinter Finrobotics</h2>
+              <h2 className="section-title">Die Menschen hinter FinRobotics</h2>
             </motion.div>
 
             <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-stretch">
@@ -247,7 +247,7 @@ export default function Home() {
                   transition={{ duration: 0.3 }}
                   className="text-muted-foreground leading-relaxed text-base mb-8"
                 >
-                  Finrobotics wurde von Prof. Dr. Paul Pronobis und Dipl.-Wirtschaftsinformatiker Tobias Lämmle gegründet. Dabei haben wir unsere jahrzehntelange Erfahrung in Wirtschaftsprüfung, Industrie und KI-Forschung eingebracht. Als Spin-off der Freien Universität Bozen verbinden wir akademische Präzision mit praxisnaher Technologie.
+                  FinRobotics wurde von Prof. Dr. Paul Pronobis und Dipl.-Wirtschaftsinformatiker Tobias Lämmle gegründet. Dabei haben wir unsere jahrzehntelange Erfahrung in Wirtschaftsprüfung, Industrie und KI-Forschung eingebracht. Als Spin-off der Freien Universität Bozen verbinden wir akademische Präzision mit praxisnaher Technologie.
                 </motion.p>
 
                 {/* Kompetenz-Icons */}
@@ -297,7 +297,7 @@ export default function Home() {
               >
                 <img
                   src="/images/paul-pronobis.webp"
-                  alt="Prof. Dr. Paul Pronobis und Dipl.-Wirtsch.-Inf. Tobias Lämmle – Gründer von Finrobotics"
+                  alt="Prof. Dr. Paul Pronobis und Dipl.-Wirtsch.-Inf. Tobias Lämmle – Gründer von FinRobotics"
                   className="rounded-xl lg:rounded-l-xl lg:rounded-r-none shadow-lg w-full h-64 md:h-80 lg:h-full object-cover"
                 />
               </motion.div>
@@ -305,7 +305,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* So funktioniert Finrobotics – Prozess-Section */}
+        {/* So funktioniert FinRobotics – Prozess-Section */}
         <section className="section bg-white">
           <div className="container">
             <motion.div
@@ -315,7 +315,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-center mb-14"
             >
-              <h2 className="section-title">So funktioniert Finrobotics</h2>
+              <h2 className="section-title">So funktioniert FinRobotics</h2>
               <p className="section-subtitle">Von der Zettelwirtschaft zur automatisierten Buchhaltung.</p>
             </motion.div>
 
@@ -343,7 +343,7 @@ export default function Home() {
                   {
                     step: "2",
                     title: "Automatisieren",
-                    text: "Finrobotics erkennt, kategorisiert und verbucht automatisch – nach EÜR und SKR03/04. Die KI lernt mit jeder Buchung dazu.",
+                    text: "FinRobotics erkennt, kategorisiert und verbucht automatisch – nach EÜR und SKR03/04. Die KI lernt mit jeder Buchung dazu.",
                     icon: (
                       <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
                         <circle cx="24" cy="24" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
@@ -435,7 +435,7 @@ export default function Home() {
                 {
                   icon: Bot,
                   title: "Lernende KI",
-                  text: "Finrobotics lernt deine Buchungsmuster und wird mit jeder Transaktion genauer.",
+                  text: "FinRobotics lernt deine Buchungsmuster und wird mit jeder Transaktion genauer.",
                 },
                 {
                   icon: BarChart3,
@@ -504,7 +504,7 @@ export default function Home() {
                   {[
                     {
                       title: "Alle Belege erfasst und verbucht",
-                      desc: "Du schickst Belege per Foto, E-Mail oder Upload. Finrobotics erledigt den Rest.",
+                      desc: "Du schickst Belege per Foto, E-Mail oder Upload. FinRobotics erledigt den Rest.",
                     },
                     {
                       title: "Automatische Kategorisierung nach EÜR und SKR03/04",
@@ -560,7 +560,7 @@ export default function Home() {
                     },
                     {
                       title: "Lücken-Erkennung",
-                      desc: "Finrobotics meldet sich, wenn Belege fehlen oder etwas nicht stimmt.",
+                      desc: "FinRobotics meldet sich, wenn Belege fehlen oder etwas nicht stimmt.",
                     },
                     {
                       title: "Volle Transparenz",
@@ -894,12 +894,12 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground mt-3">Du machst alles selbst</p>
                 </div>
 
-                {/* Finrobotics – hervorgehoben */}
+                {/* FinRobotics – hervorgehoben */}
                 <div className="text-center p-6 rounded-xl border-2 border-secondary bg-secondary/5 relative">
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                     <span className="px-3 py-1 text-xs font-semibold bg-secondary text-white rounded-full">Wir sind hier</span>
                   </div>
-                  <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-2 mt-2">Finrobotics</p>
+                  <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-2 mt-2">FinRobotics</p>
                   <p className="text-3xl font-bold text-secondary mb-1">99€</p>
                   <p className="text-xs text-muted-foreground">/Monat</p>
                   <p className="text-sm text-foreground font-medium mt-3">KI erledigt die Arbeit</p>
@@ -926,7 +926,7 @@ export default function Home() {
                   Für Steuerberater: Mehr Mandanten, weniger Aufwand
                 </h2>
                 <p className="text-primary-foreground/80 mb-6">
-                  Ihre Mandanten nutzen Finrobotics für die Vorarbeit. Sie erhalten perfekt aufbereitete DATEV-Exporte. Win-Win.
+                  Ihre Mandanten nutzen FinRobotics für die Vorarbeit. Sie erhalten perfekt aufbereitete DATEV-Exporte. Win-Win.
                 </p>
                 <Button variant="secondary" size="lg" asChild>
                   <Link href="/fuer-steuerberater">
@@ -969,10 +969,10 @@ export default function Home() {
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="faq-1">
                   <AccordionTrigger className="text-base font-medium text-foreground">
-                    Ist Finrobotics ein Ersatz für meinen Steuerberater?
+                    Ist FinRobotics ein Ersatz für meinen Steuerberater?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed">
-                    Nein. Finrobotics bereitet deine Buchhaltung so auf, dass dein Steuerberater deutlich weniger Arbeit hat. Du sparst Zeit und Geld bei der Steuerberatung – aber für den Jahresabschluss und die Steuererklärung empfehlen wir weiterhin einen Steuerberater.
+                    Nein. FinRobotics bereitet deine Buchhaltung so auf, dass dein Steuerberater deutlich weniger Arbeit hat. Du sparst Zeit und Geld bei der Steuerberatung – aber für den Jahresabschluss und die Steuererklärung empfehlen wir weiterhin einen Steuerberater.
                   </AccordionContent>
                 </AccordionItem>
 
@@ -999,25 +999,25 @@ export default function Home() {
                     Muss ich mich mit Buchhaltung auskennen?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed">
-                    Nein. Finrobotics ist so gebaut, dass du kein Vorwissen brauchst. Die KI übernimmt die Kategorisierung und Verbuchung. Du musst nur deine Belege hochladen – den Rest erledigen wir.
+                    Nein. FinRobotics ist so gebaut, dass du kein Vorwissen brauchst. Die KI übernimmt die Kategorisierung und Verbuchung. Du musst nur deine Belege hochladen – den Rest erledigen wir.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="faq-5">
                   <AccordionTrigger className="text-base font-medium text-foreground">
-                    Kann ich Finrobotics testen, bevor ich mich festlege?
+                    Kann ich FinRobotics testen, bevor ich mich festlege?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed">
-                    Ja. Schreib uns per WhatsApp und wir zeigen dir in einem kurzen Gespräch, wie Finrobotics für deine Situation funktioniert. Kein Risiko, keine Verpflichtung.
+                    Ja. Schreib uns per WhatsApp und wir zeigen dir in einem kurzen Gespräch, wie FinRobotics für deine Situation funktioniert. Kein Risiko, keine Verpflichtung.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="faq-6">
                   <AccordionTrigger className="text-base font-medium text-foreground">
-                    Was unterscheidet Finrobotics von Buchhaltungssoftware wie sevDesk oder lexoffice?
+                    Was unterscheidet FinRobotics von Buchhaltungssoftware wie sevDesk oder lexoffice?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed">
-                    Bei klassischer Buchhaltungssoftware machst du die Arbeit selbst – du kategorisierst, du verbuchst, du exportierst. Bei Finrobotics erledigt die KI diese Arbeit für dich. Du lädst Belege hoch, den Rest übernehmen wir.
+                    Bei klassischer Buchhaltungssoftware machst du die Arbeit selbst – du kategorisierst, du verbuchst, du exportierst. Bei FinRobotics erledigt die KI diese Arbeit für dich. Du lädst Belege hoch, den Rest übernehmen wir.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>

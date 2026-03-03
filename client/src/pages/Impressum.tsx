@@ -20,7 +20,7 @@ export default function Impressum() {
               <div className="prose prose-slate max-w-none">
                 <h2 className="text-xl font-semibold mt-8 mb-4">Angaben gemäß § 5 TMG</h2>
                 <p className="text-muted-foreground mb-4">
-                  Finrobotics GmbH (i.Gr.)<br />
+                  FinRobotics GmbH (i.Gr.)<br />
                   c/o Freie Universität Bozen<br />
                   Universitätsplatz 1<br />
                   39100 Bozen<br />

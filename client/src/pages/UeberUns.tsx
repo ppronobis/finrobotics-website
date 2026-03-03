@@ -56,7 +56,7 @@ export default function UeberUns() {
     {
       icon: Target,
       title: "Kundenzentrierung",
-      description: "Wir entwickeln Finrobotics für Selbstständige und Unternehmer – Menschen, die ihre Zeit für produktive Arbeit nutzen wollen, nicht für Buchhaltung.",
+      description: "Wir entwickeln FinRobotics für Selbstständige und Unternehmer – Menschen, die ihre Zeit für produktive Arbeit nutzen wollen, nicht für Buchhaltung.",
     },
     {
       icon: Lightbulb,
@@ -275,7 +275,7 @@ export default function UeberUns() {
               Werde Teil der Revolution
             </h2>
             <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Teste Finrobotics kostenlos und erlebe, wie einfach Buchhaltung sein kann.
+              Teste FinRobotics kostenlos und erlebe, wie einfach Buchhaltung sein kann.
             </p>
             <Button variant="secondary" size="lg" asChild>
               <Link href="/kontakt">

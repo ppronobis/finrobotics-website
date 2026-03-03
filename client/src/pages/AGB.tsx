@@ -20,7 +20,7 @@ export default function AGB() {
               <div className="prose prose-slate max-w-none">
                 <h2 className="text-xl font-semibold mt-8 mb-4">§ 1 Geltungsbereich</h2>
                 <p className="text-muted-foreground mb-4">
-                  (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen der Finrobotics GmbH (i.Gr.), nachfolgend "Anbieter" genannt, und dem Kunden über die Nutzung der Finrobotics-Plattform.
+                  (1) Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen der FinRobotics GmbH (i.Gr.), nachfolgend "Anbieter" genannt, und dem Kunden über die Nutzung der FinRobotics-Plattform.
                 </p>
                 <p className="text-muted-foreground mb-4">
                   (2) Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.

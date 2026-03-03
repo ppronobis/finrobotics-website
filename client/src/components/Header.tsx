@@ -32,7 +32,7 @@ export default function Header() {
             <rect width="32" height="32" rx="7" fill="url(#logoGradHeader)"/>
             <path d="M9 8h14v3H12.5v4h8v3h-8v6H9V8z" fill="white"/>
           </svg>
-          <span className="text-xl font-semibold text-foreground">Finrobotics</span>
+          <span className="text-xl font-semibold text-foreground">FinRobotics</span>
         </Link>
 
         {/* Desktop Navigation */}

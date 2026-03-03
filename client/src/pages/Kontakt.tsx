@@ -91,7 +91,7 @@ export default function Kontakt() {
                 Kontaktiere uns
               </h1>
               <p className="text-lg text-muted-foreground">
-                Hast du Fragen zu Finrobotics? Möchtest du eine Demo? Wir freuen uns, von dir zu hören.
+                Hast du Fragen zu FinRobotics? Möchtest du eine Demo? Wir freuen uns, von dir zu hören.
               </p>
             </motion.div>
           </div>
@@ -226,7 +226,7 @@ export default function Kontakt() {
                   <CardContent className="p-6">
                     <h3 className="font-semibold mb-2">Kostenlose Demo</h3>
                     <p className="text-muted-foreground text-sm mb-4">
-                      Möchtest du Finrobotics in Aktion sehen? Wir zeigen dir gerne in einer persönlichen Demo, wie du deine Buchhaltung automatisieren kannst.
+                      Möchtest du FinRobotics in Aktion sehen? Wir zeigen dir gerne in einer persönlichen Demo, wie du deine Buchhaltung automatisieren kannst.
                     </p>
                     <Button variant="outline" className="w-full" asChild>
                       <a href="mailto:hello@finrobotics.de?subject=Demo-Anfrage">

@@ -1,4 +1,4 @@
-# Finrobotics Website – Design Brainstorming
+# FinRobotics Website – Design Brainstorming
 
 ## Projektkontext
 KI-nativer Buchhaltungsservice für Freelancer und Selbstständige in Deutschland. Spin-off der Freien Universität Bozen. Ziel: Vertrauen + Innovation kommunizieren.
@@ -141,7 +141,7 @@ Für einen Buchhaltungsservice, der auf akademischer Expertise basiert und Vertr
 
 1. **Vertrauen durch Klarheit:** Deutsche KMUs und Freelancer erwarten Seriosität bei Finanzthemen. Minimalistisches Design signalisiert Kompetenz.
 
-2. **Differenzierung:** Während viele SaaS-Tools auf "friendly" setzen (sevDesk, lexoffice), positioniert sich Finrobotics als professionelle, akademisch fundierte Lösung.
+2. **Differenzierung:** Während viele SaaS-Tools auf "friendly" setzen (sevDesk, lexoffice), positioniert sich FinRobotics als professionelle, akademisch fundierte Lösung.
 
 3. **Skalierbarkeit:** Das Grid-basierte System lässt sich leicht auf weitere Seiten erweitern.
 

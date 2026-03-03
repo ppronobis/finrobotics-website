@@ -64,7 +64,7 @@ export default function Datenschutz() {
                 <h3 className="text-lg font-semibold mt-6 mb-3">Hinweis zur verantwortlichen Stelle</h3>
                 <p className="text-muted-foreground mb-4">
                   Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
-                  Finrobotics GmbH (i.Gr.)<br />
+                  FinRobotics GmbH (i.Gr.)<br />
                   c/o Freie Universität Bozen<br />
                   Universitätsplatz 1<br />
                   39100 Bozen, Italien<br /><br />

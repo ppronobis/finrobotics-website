@@ -34,7 +34,7 @@ export default function Funktionen() {
     {
       icon: Building2,
       title: "Bank-Integration",
-      description: "Verbinde dein Geschäftskonto sicher mit Finrobotics. Transaktionen werden automatisch importiert, abgeglichen und den richtigen Belegen zugeordnet.",
+      description: "Verbinde dein Geschäftskonto sicher mit FinRobotics. Transaktionen werden automatisch importiert, abgeglichen und den richtigen Belegen zugeordnet.",
       benefits: [
         "Über 5.000 deutsche Banken",
         "Automatischer Belegabgleich",
@@ -116,7 +116,7 @@ export default function Funktionen() {
                 <span className="text-secondary">automatisierte Buchhaltung</span>
               </h1>
               <p className="text-lg text-muted-foreground mb-8">
-                Von der Belegerfassung bis zum ELSTER-Export – Finrobotics automatisiert jeden Schritt deiner EÜR-Buchhaltung.
+                Von der Belegerfassung bis zum ELSTER-Export – FinRobotics automatisiert jeden Schritt deiner EÜR-Buchhaltung.
               </p>
               <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
                 <Link href="/kontakt">
@@ -183,9 +183,9 @@ export default function Funktionen() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="section-title">Finrobotics vs. Alternativen</h2>
+              <h2 className="section-title">FinRobotics vs. Alternativen</h2>
               <p className="section-subtitle mx-auto">
-                Vergleiche Finrobotics mit manueller Buchhaltung und klassischen Steuerberatern.
+                Vergleiche FinRobotics mit manueller Buchhaltung und klassischen Steuerberatern.
               </p>
             </motion.div>
             
@@ -197,7 +197,7 @@ export default function Funktionen() {
                       <th className="text-left p-4 font-semibold">Feature</th>
                       <th className="text-center p-4 font-semibold">Manuell</th>
                       <th className="text-center p-4 font-semibold bg-secondary/5">
-                        <span className="text-secondary">Finrobotics</span>
+                        <span className="text-secondary">FinRobotics</span>
                       </th>
                       <th className="text-center p-4 font-semibold">Steuerberater</th>
                     </tr>

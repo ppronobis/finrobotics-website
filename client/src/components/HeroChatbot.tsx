@@ -11,14 +11,14 @@ interface ChatMessage {
 }
 
 const SCRIPTED_RESPONSES: Record<string, string> = {
-  "Was kostet Finrobotics?":
-    "Finrobotics startet ab 99\u00A0\u20AC/Monat für Selbstständige und Unternehmer. Du sparst im Vergleich zum Steuerberater oft mehrere hundert Euro im Jahr – bei weniger Aufwand.\n\nWillst du mehr Details? Schreib uns direkt per WhatsApp! 💬",
+  "Was kostet FinRobotics?":
+    "FinRobotics startet ab 99\u00A0\u20AC/Monat für Selbstständige und Unternehmer. Du sparst im Vergleich zum Steuerberater oft mehrere hundert Euro im Jahr – bei weniger Aufwand.\n\nWillst du mehr Details? Schreib uns direkt per WhatsApp! 💬",
   "Wie funktioniert die Belegerfassung?":
     "Ganz einfach: Du lädst deine Belege hoch (Foto oder PDF) und unsere KI erkennt automatisch Betrag, Datum, Kategorie und Umsatzsteuer. Die Daten landen direkt in deiner Buchhaltung – kein Abtippen mehr. ✨",
-  "Ist Finrobotics DATEV-kompatibel?":
-    "Ja! Finrobotics exportiert deine Daten im DATEV-Format. Dein Steuerberater kann die Daten direkt in seine Software übernehmen – ohne Mehraufwand. 🔗",
+  "Ist FinRobotics DATEV-kompatibel?":
+    "Ja! FinRobotics exportiert deine Daten im DATEV-Format. Dein Steuerberater kann die Daten direkt in seine Software übernehmen – ohne Mehraufwand. 🔗",
   "Brauche ich noch einen Steuerberater?":
-    "Finrobotics ersetzt keinen Steuerberater – wir bereiten alles so vor, dass dein Steuerberater deutlich weniger Arbeit hat. Das spart dir Zeit und Geld bei der Beratung. 🤝",
+    "FinRobotics ersetzt keinen Steuerberater – wir bereiten alles so vor, dass dein Steuerberater deutlich weniger Arbeit hat. Das spart dir Zeit und Geld bei der Beratung. 🤝",
   "Wie sicher sind meine Daten?":
     "Deine Daten werden DSGVO-konform in Europa gehostet und verschlüsselt übertragen. Wir nehmen Datenschutz sehr ernst – schließlich geht es um deine Finanzdaten. 🔒",
 };
@@ -126,7 +126,7 @@ export default function HeroChatbot() {
         </div>
         <div className="min-w-0">
           <p className="text-sm font-semibold text-foreground leading-tight truncate">
-            Finrobotics Assistent
+            FinRobotics Assistent
           </p>
           <p className="text-xs text-muted-foreground leading-tight">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 mr-1 align-middle" />
@@ -154,7 +154,7 @@ export default function HeroChatbot() {
                 <Bot className="h-4 w-4 text-secondary" />
               </div>
               <div className="bg-muted/60 rounded-2xl rounded-bl-md px-3.5 py-2.5 max-w-[85%] text-sm text-foreground leading-relaxed whitespace-pre-line">
-                👋 Hi! Ich bin der Finrobotics Assistent. Ich helfe dir, deine
+                👋 Hi! Ich bin der FinRobotics Assistent. Ich helfe dir, deine
                 Buchhaltung zu verstehen – und zu automatisieren.
                 {"\n\n"}Worüber möchtest du mehr erfahren?
               </div>
@@ -252,7 +252,7 @@ export default function HeroChatbot() {
           className="flex items-center gap-2 bg-muted/40 rounded-xl px-3 py-2 cursor-pointer hover:bg-muted/60 transition-colors"
         >
           <span className="flex-1 text-sm text-muted-foreground select-none">
-            Frag mich etwas über Finrobotics…
+            Frag mich etwas über FinRobotics…
           </span>
           <div className="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center flex-shrink-0">
             <Send className="h-4 w-4 text-secondary" />

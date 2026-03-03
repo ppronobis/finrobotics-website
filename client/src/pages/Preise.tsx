@@ -75,8 +75,8 @@ export default function Preise() {
 
   const faqs = [
     {
-      question: "Kann ich Finrobotics kostenlos testen?",
-      answer: "Ja, du kannst Finrobotics 14 Tage lang kostenlos und unverbindlich testen. Keine Kreditkarte erforderlich. Nach der Testphase kannst du dich für einen Plan entscheiden oder dein Konto einfach löschen.",
+      question: "Kann ich FinRobotics kostenlos testen?",
+      answer: "Ja, du kannst FinRobotics 14 Tage lang kostenlos und unverbindlich testen. Keine Kreditkarte erforderlich. Nach der Testphase kannst du dich für einen Plan entscheiden oder dein Konto einfach löschen.",
     },
     {
       question: "Was passiert, wenn ich mehr Transaktionen habe als im Starter-Plan enthalten?",
