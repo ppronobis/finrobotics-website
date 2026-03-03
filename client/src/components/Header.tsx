@@ -23,10 +23,14 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="32" height="32" rx="6" fill="#1E3A5F"/>
-            <path d="M8 10h10v2H10v3h6v2h-6v5H8V10z" fill="#F8FAFC"/>
-            <circle cx="20" cy="18" r="4" fill="#0D9488"/>
-            <circle cx="20" cy="18" r="2" fill="#1E3A5F"/>
+            <defs>
+              <linearGradient id="logoGradHeader" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#1E3A5F"/>
+                <stop offset="100%" stopColor="#0D9488"/>
+              </linearGradient>
+            </defs>
+            <rect width="32" height="32" rx="7" fill="url(#logoGradHeader)"/>
+            <path d="M9 8h14v3H12.5v4h8v3h-8v6H9V8z" fill="white"/>
           </svg>
           <span className="text-xl font-semibold text-foreground">Finrobotics</span>
         </Link>
