@@ -77,9 +77,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     messages.push({ role: "user", content: message.trim() });
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-5-mini",
+      model: "gpt-4.1",
       messages,
-      max_completion_tokens: 500,
+      max_tokens: 500,
       temperature: 0.7,
     });
 
