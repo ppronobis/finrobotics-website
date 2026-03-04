@@ -1,37 +1,36 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Bot } from "lucide-react";
-import { toast } from "sonner";
 
-// ─── Data structure for scripted responses ───
+// ─── Data structures ───
 interface ChatMessage {
   id: string;
   type: "bot" | "user";
   text: string;
 }
 
+interface HistoryMessage {
+  role: "user" | "assistant";
+  content: string;
+}
+
 const SCRIPTED_RESPONSES: Record<string, string> = {
   "Was kostet FinRobotics?":
-    "FinRobotics startet ab 99\u00A0\u20AC/Monat für Selbstständige und Unternehmer. Du sparst im Vergleich zum Steuerberater oft mehrere hundert Euro im Jahr – bei weniger Aufwand.\n\nWillst du mehr Details? Schreib uns direkt per WhatsApp! 💬",
+    "Das Pricing ist individuell und hängt von der Kanzleigröße und den gewünschten Funktionen ab. Schreib uns gerne per WhatsApp (https://wa.me/491721084289) oder E-Mail (info@finrobotics.de) – wir machen dir ein passendes Angebot! 💬",
   "Wie funktioniert die Belegerfassung?":
     "Ganz einfach: Du lädst deine Belege hoch (Foto oder PDF) und unsere KI erkennt automatisch Betrag, Datum, Kategorie und Umsatzsteuer. Die Daten landen direkt in deiner Buchhaltung – kein Abtippen mehr. ✨",
   "Ist FinRobotics DATEV-kompatibel?":
-    "Ja! FinRobotics exportiert deine Daten im DATEV-Format. Dein Steuerberater kann die Daten direkt in seine Software übernehmen – ohne Mehraufwand. 🔗",
+    "Ja! FinRobotics erstellt fertige Buchungsvorschläge, die direkt in DATEV Unternehmen Online landen. Dein Steuerberater kann die Daten nahtlos übernehmen – ohne Mehraufwand. 🔗",
   "Brauche ich noch einen Steuerberater?":
-    "FinRobotics ersetzt keinen Steuerberater – wir bereiten alles so vor, dass dein Steuerberater deutlich weniger Arbeit hat. Das spart dir Zeit und Geld bei der Beratung. 🤝",
+    "FinRobotics ersetzt keinen Steuerberater – wir arbeiten im Auftrag der Kanzlei. Unser KI-Agent kommuniziert proaktiv mit Mandanten, damit der Steuerberater deutlich weniger Routinearbeit hat. 🤝",
   "Wie sicher sind meine Daten?":
-    "Deine Daten werden DSGVO-konform in Europa gehostet und verschlüsselt übertragen. Wir nehmen Datenschutz sehr ernst – schließlich geht es um deine Finanzdaten. 🔒",
+    "Deine Daten werden DSGVO-konform auf deutschen Servern (Hetzner) gehostet und verschlüsselt übertragen. Wir nehmen Datenschutz sehr ernst – schließlich geht es um sensible Finanzdaten. 🔒",
 };
 
 const QUICK_REPLIES = Object.keys(SCRIPTED_RESPONSES);
 
-// Abstracted so a real API can replace this later
-function getResponse(question: string): string {
-  return (
-    SCRIPTED_RESPONSES[question] ??
-    "Das kann ich leider noch nicht beantworten. Schreib uns per WhatsApp für sofortige Hilfe!"
-  );
-}
+const MAX_MESSAGES_PER_SESSION = 20;
+const API_TIMEOUT_MS = 15_000;
 
 let msgCounter = 0;
 function nextId() {
@@ -40,19 +39,26 @@ function nextId() {
 
 export default function HeroChatbot() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
+  const [history, setHistory] = useState<HistoryMessage[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const [clickedQuestions, setClickedQuestions] = useState<Set<string>>(
     new Set()
   );
   const [showWelcome, setShowWelcome] = useState(false);
   const [visibleChips, setVisibleChips] = useState<number>(0);
+  const [inputValue, setInputValue] = useState("");
+  const [sessionMessageCount, setSessionMessageCount] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   // Entrance animation sequence
   useEffect(() => {
     const t1 = setTimeout(() => setShowWelcome(true), 500);
     const timers = QUICK_REPLIES.map((_, i) =>
-      setTimeout(() => setVisibleChips((v) => Math.max(v, i + 1)), 900 + i * 100)
+      setTimeout(
+        () => setVisibleChips((v) => Math.max(v, i + 1)),
+        900 + i * 100
+      )
     );
     return () => {
       clearTimeout(t1);
@@ -70,6 +76,41 @@ export default function HeroChatbot() {
     }
   }, [messages, isTyping]);
 
+  // Send message to API
+  const sendToAPI = useCallback(
+    async (userMessage: string): Promise<string> => {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), API_TIMEOUT_MS);
+
+      try {
+        const response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: userMessage, history }),
+          signal: controller.signal,
+        });
+
+        clearTimeout(timeout);
+
+        if (!response.ok) {
+          const data = await response.json().catch(() => null);
+          throw new Error(data?.error ?? "API error");
+        }
+
+        const data = await response.json();
+        return data.reply;
+      } catch (error: any) {
+        clearTimeout(timeout);
+        if (error.name === "AbortError") {
+          return "Entschuldigung, ich bin gerade nicht erreichbar. Schreib uns per WhatsApp (https://wa.me/491721084289) für sofortige Hilfe! 💬";
+        }
+        return "Entschuldigung, da ist etwas schiefgelaufen. Schreib uns per WhatsApp (https://wa.me/491721084289) für sofortige Hilfe! 💬";
+      }
+    },
+    [history]
+  );
+
+  // Handle scripted quick reply buttons
   const handleQuickReply = async (question: string) => {
     if (isTyping) return;
 
@@ -86,30 +127,80 @@ export default function HeroChatbot() {
     await new Promise((r) => setTimeout(r, 800));
     setIsTyping(false);
 
-    // Add bot response
-    const answer = getResponse(question);
+    // Add bot response (scripted)
+    const answer = SCRIPTED_RESPONSES[question] ?? "";
     setMessages((prev) => [
       ...prev,
       { id: nextId(), type: "bot", text: answer },
     ]);
+
+    // Also add to history for context
+    setHistory((prev) => [
+      ...prev,
+      { role: "user", content: question },
+      { role: "assistant", content: answer },
+    ]);
   };
 
-  const handleInputClick = () => {
-    toast(
-      <div>
-        Volle Chat-Funktion kommt bald!{" "}
-        <a
-          href="https://wa.me/491721084289"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline font-medium text-[#25D366]"
-        >
-          Schreib uns per WhatsApp
-        </a>{" "}
-        für sofortige Hilfe.
-      </div>
-    );
+  // Handle free-text input submission
+  const handleSendMessage = async () => {
+    const text = inputValue.trim();
+    if (!text || isTyping) return;
+
+    // Rate limiting
+    if (sessionMessageCount >= MAX_MESSAGES_PER_SESSION) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: nextId(),
+          type: "bot",
+          text: "Du hast das Nachrichtenlimit für diese Session erreicht. Schreib uns per WhatsApp (https://wa.me/491721084289) oder E-Mail (info@finrobotics.de) für weitere Fragen! 💬",
+        },
+      ]);
+      setInputValue("");
+      return;
+    }
+
+    // Add user message
+    const userMsg = text;
+    setInputValue("");
+    setSessionMessageCount((c) => c + 1);
+
+    setMessages((prev) => [
+      ...prev,
+      { id: nextId(), type: "user", text: userMsg },
+    ]);
+
+    // Call API
+    setIsTyping(true);
+    const reply = await sendToAPI(userMsg);
+    setIsTyping(false);
+
+    // Add bot response
+    setMessages((prev) => [
+      ...prev,
+      { id: nextId(), type: "bot", text: reply },
+    ]);
+
+    // Update history
+    setHistory((prev) => [
+      ...prev,
+      { role: "user", content: userMsg },
+      { role: "assistant", content: reply },
+    ]);
   };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSendMessage();
+    }
+  };
+
+  // Hide quick-reply chips once user sends a free-text message
+  const hasFreetextMessage = messages.some(
+    (m) => m.type === "user" && !QUICK_REPLIES.includes(m.text)
+  );
 
   return (
     <motion.div
@@ -162,8 +253,8 @@ export default function HeroChatbot() {
           )}
         </AnimatePresence>
 
-        {/* Quick-reply chips */}
-        {showWelcome && visibleChips > 0 && (
+        {/* Quick-reply chips — hidden once user sends a free-text message */}
+        {showWelcome && visibleChips > 0 && !hasFreetextMessage && (
           <div className="flex flex-wrap gap-1.5 pl-9">
             {QUICK_REPLIES.slice(0, visibleChips).map((q, i) => {
               const isClicked = clickedQuestions.has(q);
@@ -247,16 +338,26 @@ export default function HeroChatbot() {
 
       {/* ── Input bar ── */}
       <div className="border-t border-border px-3 py-2.5 bg-card">
-        <div
-          onClick={handleInputClick}
-          className="flex items-center gap-2 bg-muted/40 rounded-xl px-3 py-2 cursor-pointer hover:bg-muted/60 transition-colors"
-        >
-          <span className="flex-1 text-sm text-muted-foreground select-none">
-            Frag mich etwas über FinRobotics…
-          </span>
-          <div className="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center flex-shrink-0">
+        <div className="flex items-center gap-2 bg-muted/40 rounded-xl px-3 py-2">
+          <input
+            ref={inputRef}
+            type="text"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={handleKeyDown}
+
+            placeholder="Frag mich etwas über FinRobotics…"
+            disabled={isTyping}
+            className="flex-1 text-sm bg-transparent outline-none text-foreground placeholder:text-muted-foreground disabled:opacity-50"
+            maxLength={500}
+          />
+          <button
+            onClick={handleSendMessage}
+            disabled={isTyping || !inputValue.trim()}
+            className="w-8 h-8 rounded-lg bg-secondary/15 flex items-center justify-center flex-shrink-0 hover:bg-secondary/25 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
             <Send className="h-4 w-4 text-secondary" />
-          </div>
+          </button>
         </div>
       </div>
     </motion.div>
