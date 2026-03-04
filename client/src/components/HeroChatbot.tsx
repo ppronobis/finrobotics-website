@@ -1,6 +1,44 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, Bot } from "lucide-react";
+
+// ─── Linkify helper: turns URLs and emails into clickable links ───
+function renderLinkedText(text: string): React.ReactNode[] {
+  const urlRegex = /(https?:\/\/[^\s,)]+)|([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = urlRegex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.slice(lastIndex, match.index));
+    }
+    const url = match[1];
+    const email = match[2];
+    if (url) {
+      // Make wa.me links show as "WhatsApp" label
+      const label = url.includes("wa.me") ? "WhatsApp schreiben 💬" : url.replace(/^https?:\/\//, "");
+      parts.push(
+        <a key={match.index} href={url} target="_blank" rel="noopener noreferrer"
+          className="text-secondary underline underline-offset-2 hover:text-secondary/80 break-all">
+          {label}
+        </a>
+      );
+    } else if (email) {
+      parts.push(
+        <a key={match.index} href={`mailto:${email}`}
+          className="text-secondary underline underline-offset-2 hover:text-secondary/80 break-all">
+          {email}
+        </a>
+      );
+    }
+    lastIndex = match.index + match[0].length;
+  }
+  if (lastIndex < text.length) {
+    parts.push(text.slice(lastIndex));
+  }
+  return parts;
+}
 
 // ─── Data structures ───
 interface ChatMessage {
@@ -306,7 +344,7 @@ export default function HeroChatbot() {
                   <Bot className="h-4 w-4 text-secondary" />
                 </div>
                 <div className="bg-muted/60 rounded-2xl rounded-bl-md px-3.5 py-2.5 max-w-[85%] text-sm text-foreground leading-relaxed whitespace-pre-line">
-                  {msg.text}
+                  {renderLinkedText(msg.text)}
                 </div>
               </motion.div>
             )
