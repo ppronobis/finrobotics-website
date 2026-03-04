@@ -86,7 +86,7 @@ async function startServer() {
       messages.push({ role: "user", content: message.trim() });
 
       const completion = await openai.chat.completions.create({
-        model: "gpt-5.2-mini",
+        model: "gpt-5-mini",
         messages,
         max_tokens: 500,
         temperature: 0.7,
