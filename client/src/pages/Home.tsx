@@ -28,7 +28,6 @@ import {
   MessageCircle,
   BadgePercent,
   Wrench,
-  Info,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -68,11 +67,11 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground mb-6">
-                  Deine Buchhaltung auf{" "}
-                  <span className="text-secondary">Autopilot.</span>
+                  Dein digitaler Mitarbeiter für{" "}
+                  <span className="text-secondary">die Buchhaltung.</span>
                 </h1>
                 <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
-                  FinRobotics sortiert deine Belege, klassifiziert Ausgaben und bereitet alles automatisch für deine Steuererklärung vor.
+                  Ein KI-Agent, der deine Belege erfasst, Buchungen erstellt und proaktiv mit dir kommuniziert. Per WhatsApp oder E-Mail.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Button size="lg" className="bg-[#209173] hover:bg-[#1a7a60] text-white" asChild>
@@ -154,14 +153,14 @@ export default function Home() {
                       <span className="text-sm font-semibold text-muted-foreground uppercase tracking-wide">Ohne FinRobotics</span>
                     </div>
                     <h3 className="text-xl font-semibold text-foreground mb-5">
-                      Stunden mit Papierkram statt mit deinem Business
+                      Stundenlang Belegen hinterherlaufen
                     </h3>
                     <ul className="space-y-3">
                       {[
-                        "5–10 Stunden pro Monat für Belege sortieren und abtippen",
-                        "Unsicherheit bei jeder Buchung: Ist das die richtige Kategorie?",
-                        "Excel-Chaos und Schuhkarton voller Quittungen",
-                        "Ständige Angst vor Fehlern bei der Steuererklärung",
+                        "Fehlende Belege? Manuell nachfragen, warten, erneut erinnern",
+                        "Unsicherheit bei Buchungen — richtige Kategorie? Richtiger Steuersatz?",
+                        "Informationen verstreut über E-Mail, WhatsApp und Papier",
+                        "Monatsende: Hektischer Belegmarathon statt ruhiger Abschluss",
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <div className="w-5 h-5 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -200,14 +199,14 @@ export default function Home() {
                       <span className="text-sm font-semibold text-white/80 uppercase tracking-wide">Mit FinRobotics</span>
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-5">
-                      Buchhaltung erledigt sich, während du arbeitest
+                      Dein digitaler Mitarbeiter erledigt die Vorarbeit
                     </h3>
                     <ul className="space-y-3">
                       {[
-                        "Belege hochladen – KI erkennt alles automatisch",
-                        "Ausgaben werden automatisch richtig zugeordnet",
-                        "DATEV-Export per Klick – dein Steuerberater freut sich",
-                        "Volle Kontrolle und Transparenz über deine Finanzen",
+                        "Dein Agent fordert fehlende Belege proaktiv an — per WhatsApp oder E-Mail",
+                        "Automatische Kategorisierung und Verbuchung nach SKR03/04",
+                        "Alles an einem Ort: Belege, Buchungen, Kommunikation",
+                        "DATEV-Export per Klick — dein Steuerberater bekommt alles fertig aufbereitet",
                       ].map((item, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -424,8 +423,8 @@ export default function Home() {
               {[
                 {
                   icon: Camera,
-                  title: "Intelligente Belegerfassung",
-                  text: "Fotografiere Belege oder leite Rechnungen per E-Mail weiter. Die KI erkennt Betrag, Datum und Kategorie automatisch.",
+                  title: "Automatische Belegerfassung",
+                  text: "Fotografiere Belege oder leite Rechnungen per E-Mail weiter. Dein Agent erkennt Betrag, Datum und Kategorie automatisch.",
                 },
                 {
                   icon: Building2,
@@ -434,18 +433,18 @@ export default function Home() {
                 },
                 {
                   icon: Bot,
-                  title: "Lernende KI",
-                  text: "FinRobotics lernt deine Buchungsmuster und wird mit jeder Transaktion genauer.",
+                  title: "Lernt deine Muster",
+                  text: "Dein digitaler Mitarbeiter lernt deine Buchungsmuster und wird mit jeder Transaktion genauer.",
                 },
                 {
                   icon: BarChart3,
-                  title: "Echtzeit-Dashboard",
+                  title: "Voller Überblick — jederzeit",
                   text: "Gewinn, Liquidität, USt-Vorauszahlung – immer aktuell, immer im Blick.",
                 },
                 {
                   icon: MessageSquare,
-                  title: "KI-Assistent",
-                  text: "Frag einfach: 'Wie viel Umsatz habe ich im Q3 gemacht?' – und bekomme sofort Antworten.",
+                  title: "Frag deinen Agent",
+                  text: "Stell Fragen wie 'Wie viel Umsatz habe ich im Q3 gemacht?' — und bekomme sofort Antworten.",
                 },
                 {
                   icon: FileOutput,
@@ -559,8 +558,8 @@ export default function Home() {
                       desc: "\"Wie viel habe ich für Software ausgegeben?\" – sofortige Antwort.",
                     },
                     {
-                      title: "Lücken-Erkennung",
-                      desc: "FinRobotics meldet sich, wenn Belege fehlen oder etwas nicht stimmt.",
+                      title: "Proaktive Lücken-Erkennung",
+                      desc: "Dein Agent meldet sich, wenn Belege fehlen oder etwas nicht stimmt.",
                     },
                     {
                       title: "Volle Transparenz",
@@ -608,8 +607,8 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="section-title">Sei einer der ersten 50</h2>
-              <p className="section-subtitle">Wir suchen Selbstständige und Unternehmer für unsere Closed Beta. Als Early Adopter profitierst du von:</p>
+              <h2 className="section-title">Jetzt in der Closed Beta</h2>
+              <p className="section-subtitle">Wir suchen Selbstständige und Unternehmer, die ihre Buchhaltung transformieren wollen.</p>
             </motion.div>
 
             {/* Drei Vorteile */}
@@ -622,8 +621,8 @@ export default function Home() {
                 },
                 {
                   icon: BadgePercent,
-                  title: "Early-Adopter-Preis",
-                  desc: "Sichere dir dauerhaft den günstigsten Tarif",
+                  title: "Dein Agent, dein Feedback",
+                  desc: "Du beeinflusst direkt, wie dein digitaler Mitarbeiter arbeitet",
                 },
                 {
                   icon: Wrench,
@@ -647,26 +646,6 @@ export default function Home() {
                 </motion.div>
               ))}
             </div>
-
-            {/* Fortschrittsbalken */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="max-w-lg mx-auto mb-10"
-            >
-              <p className="text-sm text-muted-foreground text-center mb-3">12 von 50 Plätzen vergeben</p>
-              <div className="h-3 bg-border rounded-full overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: "24%" }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                  className="h-full bg-secondary rounded-full"
-                />
-              </div>
-            </motion.div>
 
             {/* CTA */}
             <motion.div
@@ -729,189 +708,6 @@ export default function Home() {
                   </svg>
                   Per WhatsApp beitreten
                 </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Pricing Section */}
-        <section className="section bg-white">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center mb-14"
-            >
-              <h2 className="section-title">Einfach, transparent, fair.</h2>
-              <p className="section-subtitle">Professionelle Buchhaltung – für einen Bruchteil dessen, was ein Buchhaltungsbüro kostet.</p>
-            </motion.div>
-
-            {/* Pricing Cards */}
-            <div className="grid md:grid-cols-12 gap-6 lg:gap-8 mb-16">
-
-              {/* Starter Card – Hauptelement */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="md:col-span-7"
-              >
-                <div className="relative bg-white border-2 border-secondary/30 rounded-xl shadow-lg p-8 h-full">
-                  {/* Teal Top Border */}
-                  <div className="absolute top-0 left-0 right-0 h-[3px] bg-secondary rounded-t-xl" />
-
-                  {/* Beta Badge */}
-                  <div className="flex items-center justify-between mb-6">
-                    <h3 className="text-2xl font-semibold text-foreground">Starter</h3>
-                    <span className="px-3 py-1 text-xs font-semibold bg-secondary/10 text-secondary rounded-full">BETA-PREIS</span>
-                  </div>
-
-                  {/* Preis */}
-                  <div className="mb-2">
-                    <span className="text-lg text-muted-foreground line-through mr-2">199€/Monat</span>
-                  </div>
-                  <div className="mb-1">
-                    <span className="text-5xl font-bold text-secondary">99€</span>
-                    <span className="text-muted-foreground text-lg">/Monat</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-4">Für Beta-Nutzer dauerhaft gesichert</p>
-
-                  {/* Vergleichs-Anker */}
-                  <div className="bg-muted/50 rounded-lg px-4 py-3 mb-8 flex items-center gap-2">
-                    <Info className="h-4 w-4 text-muted-foreground flex-shrink-0" />
-                    <span className="text-sm text-muted-foreground">Zum Vergleich: Ein Buchhaltungsbüro kostet ab 350€/Monat</span>
-                  </div>
-
-                  {/* Features */}
-                  <ul className="space-y-3 mb-8">
-                    {[
-                      "Bis zu 50 Belege pro Monat",
-                      "Automatische Belegerfassung & Kategorisierung",
-                      "Lernende KI nach EÜR und SKR03/04",
-                      "USt-Voranmeldung vorbereitet",
-                      "ELSTER & DATEV Export",
-                      "Echtzeit-Dashboard",
-                      "KI-Assistent",
-                      "95+ Sprachen unterstützt",
-                      "Jederzeit kündbar",
-                      "Persönlicher Support per WhatsApp",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                          <Check className="h-3 w-3 text-secondary" />
-                        </div>
-                        <span className="text-sm text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <Button size="lg" className="w-full bg-[#209173] hover:bg-[#1a7a60] text-white" asChild>
-                    <a href="https://wa.me/491721084289" target="_blank" rel="noopener noreferrer">
-                      <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                      </svg>
-                      Beta-Platz sichern
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-
-              {/* Business Card – dezenter */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.15 }}
-                className="md:col-span-5"
-              >
-                <div className="bg-muted/30 border border-border rounded-xl p-8 h-full flex flex-col">
-                  <h3 className="text-2xl font-semibold text-foreground mb-6">Business</h3>
-
-                  {/* Auf Anfrage */}
-                  <div className="mb-2">
-                    <span className="text-4xl font-bold text-foreground">Auf Anfrage</span>
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-8">
-                    Für Selbstständige und Unternehmen mit höherem Belegvolumen. Wir erstellen dir ein individuelles Angebot.
-                  </p>
-
-                  {/* Features */}
-                  <p className="text-sm font-medium text-foreground mb-4">Alles aus dem Starter-Tarif, plus:</p>
-                  <ul className="space-y-3 mb-8 flex-grow">
-                    {[
-                      "Unbegrenzte Belege",
-                      "Mehrere Bankkonten",
-                      "Priorisierter Support",
-                      "Individuelle Einrichtung",
-                    ].map((feature, i) => (
-                      <li key={i} className="flex items-center gap-3">
-                        <div className="w-5 h-5 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                          <Check className="h-3 w-3 text-secondary" />
-                        </div>
-                        <span className="text-sm text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* CTA */}
-                  <Button size="lg" variant="outline" className="w-full" asChild>
-                    <a href="/kontakt">
-                      <MessageSquare className="mr-2 h-5 w-5" />
-                      Angebot anfragen
-                    </a>
-                  </Button>
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Positionierungs-Vergleich */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className=""
-            >
-              {/* Skala-Linie */}
-              <div className="relative mb-4">
-                <div className="hidden md:flex items-center justify-between text-xs text-muted-foreground px-8">
-                  <span>Günstig + viel Aufwand</span>
-                  <span>Teuer + kein Aufwand</span>
-                </div>
-                <div className="hidden md:block h-px bg-border mt-2 mx-8" />
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-4">
-                {/* DIY-Software */}
-                <div className="text-center p-6 rounded-xl">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">DIY-Software</p>
-                  <p className="text-2xl font-bold text-muted-foreground/60 mb-1">ab ~25€</p>
-                  <p className="text-xs text-muted-foreground">/Monat</p>
-                  <p className="text-sm text-muted-foreground mt-3">Du machst alles selbst</p>
-                </div>
-
-                {/* FinRobotics – hervorgehoben */}
-                <div className="text-center p-6 rounded-xl border-2 border-secondary bg-secondary/5 relative">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="px-3 py-1 text-xs font-semibold bg-secondary text-white rounded-full">Wir sind hier</span>
-                  </div>
-                  <p className="text-xs font-semibold text-secondary uppercase tracking-wider mb-2 mt-2">FinRobotics</p>
-                  <p className="text-3xl font-bold text-secondary mb-1">99€</p>
-                  <p className="text-xs text-muted-foreground">/Monat</p>
-                  <p className="text-sm text-foreground font-medium mt-3">KI erledigt die Arbeit</p>
-                </div>
-
-                {/* Buchhaltungsbüro */}
-                <div className="text-center p-6 rounded-xl">
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Buchhaltungsbüro</p>
-                  <p className="text-2xl font-bold text-muted-foreground/60 mb-1">ab 350€</p>
-                  <p className="text-xs text-muted-foreground">/Monat</p>
-                  <p className="text-sm text-muted-foreground mt-3">Jemand anderes macht es</p>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -1017,7 +813,7 @@ export default function Home() {
                     Was unterscheidet FinRobotics von Buchhaltungssoftware wie sevDesk oder lexoffice?
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground leading-relaxed">
-                    Bei klassischer Buchhaltungssoftware machst du die Arbeit selbst – du kategorisierst, du verbuchst, du exportierst. Bei FinRobotics erledigt die KI diese Arbeit für dich. Du lädst Belege hoch, den Rest übernehmen wir.
+                    Bei klassischer Buchhaltungssoftware machst du die Arbeit selbst — du kategorisierst, du verbuchst, du exportierst. Bei FinRobotics hast du einen digitalen Mitarbeiter, der diese Arbeit für dich erledigt. Du lädst Belege hoch, den Rest übernimmt dein Agent.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -1035,7 +831,7 @@ export default function Home() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-2xl mx-auto"
             >
-              <h2 className="section-title">Bereit, deine Buchhaltung zu automatisieren?</h2>
+              <h2 className="section-title">Bereit für deinen digitalen Mitarbeiter?</h2>
               <p className="section-subtitle mx-auto mb-8">
                 Schreib uns per WhatsApp – wir melden uns persönlich.
               </p>

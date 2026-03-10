@@ -53,16 +53,16 @@ interface HistoryMessage {
 }
 
 const SCRIPTED_RESPONSES: Record<string, string> = {
-  "Was kostet FinRobotics?":
-    "Das Pricing ist individuell und hängt von der Kanzleigröße und den gewünschten Funktionen ab. Schreib uns gerne per WhatsApp (https://wa.me/491721084289) oder E-Mail (info@finrobotics.de) – wir machen dir ein passendes Angebot! 💬",
+  "Wie funktioniert der KI-Agent?":
+    "Dein digitaler Mitarbeiter erfasst Belege automatisch, erstellt Buchungsvorschläge und kommuniziert proaktiv mit dir — per WhatsApp oder E-Mail. Du lädst Belege hoch oder leitest Rechnungen weiter, den Rest erledigt dein Agent. 🤖",
   "Wie funktioniert die Belegerfassung?":
-    "Ganz einfach: Du lädst deine Belege hoch (Foto oder PDF) und unsere KI erkennt automatisch Betrag, Datum, Kategorie und Umsatzsteuer. Die Daten landen direkt in deiner Buchhaltung – kein Abtippen mehr. ✨",
+    "Fotografiere Belege oder leite Rechnungen per E-Mail weiter. Dein Agent erkennt automatisch Betrag, Datum, Kategorie und Umsatzsteuer. Die Daten landen direkt in deiner Buchhaltung — kein Abtippen mehr. ✨",
   "Ist FinRobotics DATEV-kompatibel?":
     "Ja! FinRobotics erstellt fertige Buchungsvorschläge, die direkt in DATEV Unternehmen Online landen. Dein Steuerberater kann die Daten nahtlos übernehmen – ohne Mehraufwand. 🔗",
   "Brauche ich noch einen Steuerberater?":
-    "FinRobotics ersetzt keinen Steuerberater – wir arbeiten im Auftrag der Kanzlei. Unser KI-Agent kommuniziert proaktiv mit Mandanten, damit der Steuerberater deutlich weniger Routinearbeit hat. 🤝",
+    "FinRobotics ersetzt keinen Steuerberater. Dein digitaler Mitarbeiter übernimmt die Vorarbeit — Belege erfassen, kategorisieren, DATEV-Export vorbereiten. Dein Steuerberater bekommt alles fertig aufbereitet und hat deutlich weniger Routinearbeit. 🤝",
   "Wie sicher sind meine Daten?":
-    "Deine Daten werden DSGVO-konform auf deutschen Servern (Hetzner) gehostet und verschlüsselt übertragen. Wir nehmen Datenschutz sehr ernst – schließlich geht es um sensible Finanzdaten. 🔒",
+    "Deine Daten werden DSGVO-konform auf deutschen Servern gehostet und verschlüsselt übertragen. Wir nehmen Datenschutz sehr ernst — schließlich geht es um sensible Finanzdaten. 🔒",
 };
 
 const QUICK_REPLIES = Object.keys(SCRIPTED_RESPONSES);
