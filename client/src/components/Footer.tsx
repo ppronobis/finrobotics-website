@@ -19,6 +19,8 @@ export default function Footer() {
       { href: "/impressum", label: "Impressum" },
       { href: "/datenschutz", label: "Datenschutz" },
       { href: "/agb", label: "AGB" },
+      { href: "/privacy", label: "Privacy Policy" },
+      { href: "/terms", label: "Terms of Service" },
     ],
   };
 

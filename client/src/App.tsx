@@ -24,7 +24,9 @@ function Router() {
       <Route path="/ueber-uns" component={UeberUns} />
       <Route path="/impressum" component={Impressum} />
       <Route path="/datenschutz" component={Datenschutz} />
+      <Route path="/privacy" component={Datenschutz} />
       <Route path="/agb" component={AGB} />
+      <Route path="/terms" component={AGB} />
       <Route path="/kontakt" component={Kontakt} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />

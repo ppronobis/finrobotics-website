@@ -6,7 +6,7 @@ export default function Datenschutz() {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-1">
         <section className="section">
           <div className="container max-w-3xl">
@@ -16,114 +16,188 @@ export default function Datenschutz() {
               transition={{ duration: 0.5 }}
             >
               <h1 className="text-4xl font-semibold tracking-tight mb-8">Datenschutzerklärung</h1>
-              
+
               <div className="prose prose-slate max-w-none">
-                <h2 className="text-xl font-semibold mt-8 mb-4">1. Datenschutz auf einen Blick</h2>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Allgemeine Hinweise</h3>
+
+                {/* 1. Verantwortlicher */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">1. Verantwortlicher</h2>
                 <p className="text-muted-foreground mb-4">
-                  Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
-                </p>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Datenerfassung auf dieser Website</h3>
-                <p className="text-muted-foreground mb-4">
-                  <strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br />
-                  Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.
-                </p>
-                
-                <p className="text-muted-foreground mb-4">
-                  <strong>Wie erfassen wir Ihre Daten?</strong><br />
-                  Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z.B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).
-                </p>
-                
-                <p className="text-muted-foreground mb-4">
-                  <strong>Wofür nutzen wir Ihre Daten?</strong><br />
-                  Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.
-                </p>
-                
-                <p className="text-muted-foreground mb-4">
-                  <strong>Welche Rechte haben Sie bezüglich Ihrer Daten?</strong><br />
-                  Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.
-                </p>
-                
-                <h2 className="text-xl font-semibold mt-8 mb-4">2. Hosting</h2>
-                <p className="text-muted-foreground mb-4">
-                  Wir hosten die Inhalte unserer Website bei folgendem Anbieter:
+                  Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze sowie sonstiger datenschutzrechtlicher Bestimmungen ist:
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  Die Website wird auf Servern in der Europäischen Union gehostet. Die Server erfüllen alle Anforderungen der DSGVO.
+                  FinRobotics<br />
+                  Prof. Dr. Paul Pronobis<br />
+                  E-Mail: paul.pronobis@finrobotics.de
                 </p>
-                
-                <h2 className="text-xl font-semibold mt-8 mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Datenschutz</h3>
+
+                {/* 2. Datenschutzbeauftragter */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">2. Datenschutzbeauftragter</h2>
                 <p className="text-muted-foreground mb-4">
-                  Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.
+                  Ansprechpartner für Datenschutzanfragen:<br />
+                  Prof. Dr. Paul Pronobis<br />
+                  E-Mail: paul.pronobis@finrobotics.de
                 </p>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Hinweis zur verantwortlichen Stelle</h3>
+
+                {/* 3. Allgemeines zur Datenverarbeitung */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">3. Allgemeines zur Datenverarbeitung</h2>
                 <p className="text-muted-foreground mb-4">
-                  Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:<br /><br />
-                  FinRobotics GmbH (i.Gr.)<br />
-                  c/o Freie Universität Bozen<br />
-                  Universitätsplatz 1<br />
-                  39100 Bozen, Italien<br /><br />
-                  E-Mail: hello@finrobotics.de
+                  FinRobotics bietet KI-gestützte Agenten für Steuerberatungskanzleien an. Im Rahmen unserer Leistungserbringung verarbeiten wir personenbezogene Daten ausschließlich, soweit dies zur Bereitstellung einer funktionsfähigen Plattform sowie zur Erbringung unserer vertraglich vereinbarten Leistungen erforderlich ist.
                 </p>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Speicherdauer</h3>
+
+                {/* 4. Rechtsgrundlagen */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">4. Rechtsgrundlagen der Verarbeitung</h2>
                 <p className="text-muted-foreground mb-4">
-                  Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt.
+                  Die Verarbeitung personenbezogener Daten erfolgt auf Grundlage folgender Rechtsgrundlagen:
                 </p>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Widerruf Ihrer Einwilligung zur Datenverarbeitung</h3>
+                <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-2">
+                  <li><strong>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung):</strong> Soweit wir die Einwilligung der betroffenen Person für die Verarbeitung einholen, insbesondere für die Verknüpfung von Bankkonten über PSD2 Open Banking.</li>
+                  <li><strong>Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung):</strong> Für die Verarbeitung, die zur Erfüllung eines Vertrags mit der betroffenen Person oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.</li>
+                  <li><strong>Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse):</strong> Für die Verarbeitung, die zur Wahrung berechtigter Interessen des Verantwortlichen oder eines Dritten erforderlich ist, z.B. zur Sicherstellung der IT-Sicherheit und des fehlerfreien Betriebs der Plattform.</li>
+                </ul>
+
+                {/* 5. Welche Daten wir erheben */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">5. Art der verarbeiteten Daten</h2>
+
+                <h3 className="text-lg font-semibold mt-6 mb-3">5.1 Website-Nutzungsdaten</h3>
                 <p className="text-muted-foreground mb-4">
-                  Viele Datenverarbeitungsvorgänge sind nur mit Ihrer ausdrücklichen Einwilligung möglich. Sie können eine bereits erteilte Einwilligung jederzeit widerrufen. Die Rechtmäßigkeit der bis zum Widerruf erfolgten Datenverarbeitung bleibt vom Widerruf unberührt.
+                  Beim Besuch unserer Website werden automatisch technische Daten erhoben, die Ihr Browser an unseren Server übermittelt. Hierzu gehören:
                 </p>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Beschwerderecht bei der zuständigen Aufsichtsbehörde</h3>
+                <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-1">
+                  <li>IP-Adresse (anonymisiert)</li>
+                  <li>Datum und Uhrzeit der Anfrage</li>
+                  <li>Browsertyp und -version</li>
+                  <li>Verwendetes Betriebssystem</li>
+                  <li>Referrer-URL</li>
+                </ul>
                 <p className="text-muted-foreground mb-4">
-                  Im Falle von Verstößen gegen die DSGVO steht den Betroffenen ein Beschwerderecht bei einer Aufsichtsbehörde zu.
+                  Diese Daten werden ausschließlich zur Sicherstellung eines störungsfreien Betriebs der Website und zur Verbesserung unseres Angebots verarbeitet. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
                 </p>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Recht auf Datenübertragbarkeit</h3>
+
+                <h3 className="text-lg font-semibold mt-6 mb-3">5.2 Bankdaten über PSD2 Open Banking</h3>
                 <p className="text-muted-foreground mb-4">
-                  Sie haben das Recht, Daten, die wir auf Grundlage Ihrer Einwilligung oder in Erfüllung eines Vertrags automatisiert verarbeiten, an sich oder an einen Dritten in einem gängigen, maschinenlesbaren Format aushändigen zu lassen.
+                  Im Rahmen unserer automatisierten Buchhaltungsunterstützung verarbeiten wir Bankdaten unserer Kunden ausschließlich mit deren ausdrücklicher Einwilligung. Die Datenübermittlung erfolgt über den PSD2-konformen Open-Banking-Dienst unseres technischen Partners Enable Banking Oy. Dabei werden folgende Daten verarbeitet:
                 </p>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Auskunft, Löschung und Berichtigung</h3>
+                <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-1">
+                  <li>Kontostände</li>
+                  <li>Kontotransaktionen (Zahlungseingänge und -ausgänge)</li>
+                  <li>Kontoinformationen (IBAN, Kontoinhaber)</li>
+                </ul>
                 <p className="text-muted-foreground mb-4">
-                  Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung und ggf. ein Recht auf Berichtigung oder Löschung dieser Daten.
+                  Die Verknüpfung des Bankkontos erfolgt ausschließlich durch den Nutzer selbst über eine sichere Weiterleitung zum Online-Banking-Portal seiner Bank. FinRobotics hat zu keinem Zeitpunkt Zugriff auf die Online-Banking-Zugangsdaten des Nutzers.
                 </p>
-                
-                <h2 className="text-xl font-semibold mt-8 mb-4">4. Datenerfassung auf dieser Website</h2>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Kontaktformular</h3>
+
+                <h3 className="text-lg font-semibold mt-6 mb-3">5.3 Kommunikationsdaten</h3>
                 <p className="text-muted-foreground mb-4">
-                  Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+                  Im Rahmen der Mandantenbetreuung durch unsere KI-Agenten können folgende Kommunikationsdaten verarbeitet werden:
                 </p>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Anfrage per E-Mail</h3>
+                <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-1">
+                  <li>WhatsApp-Nachrichten (im Rahmen der automatisierten Mandantenkommunikation)</li>
+                  <li>E-Mail-Korrespondenz</li>
+                  <li>Kontaktdaten (Name, Telefonnummer, E-Mail-Adresse)</li>
+                </ul>
                 <p className="text-muted-foreground mb-4">
-                  Wenn Sie uns per E-Mail kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet.
+                  Diese Daten werden ausschließlich zur Erbringung der vertraglich vereinbarten Dienstleistungen verarbeitet und nicht zu Werbezwecken genutzt.
                 </p>
-                
-                <h2 className="text-xl font-semibold mt-8 mb-4">5. Plugins und Tools</h2>
-                
-                <h3 className="text-lg font-semibold mt-6 mb-3">Google Fonts (lokales Hosting)</h3>
+
+                {/* 6. Zweck der Verarbeitung */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">6. Zweck der Datenverarbeitung</h2>
                 <p className="text-muted-foreground mb-4">
-                  Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so genannte Google Fonts, die von Google bereitgestellt werden. Die Google Fonts sind lokal installiert. Eine Verbindung zu Servern von Google findet dabei nicht statt.
+                  Die Verarbeitung der personenbezogenen Daten dient folgenden Zwecken:
                 </p>
-                
+                <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-1">
+                  <li>Automatisierte Buchhaltungsunterstützung für Steuerberatungskanzleien</li>
+                  <li>Synchronisation und Kategorisierung von Banktransaktionen</li>
+                  <li>Automatisierte Kommunikation mit Mandanten im Auftrag der Kanzlei</li>
+                  <li>Belegverarbeitung und -zuordnung</li>
+                  <li>Bereitstellung und Verbesserung unserer Plattform</li>
+                  <li>Gewährleistung der IT-Sicherheit</li>
+                </ul>
+
+                {/* 7. Drittanbieter */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">7. Empfänger und Drittanbieter</h2>
+
+                <h3 className="text-lg font-semibold mt-6 mb-3">7.1 Enable Banking Oy</h3>
+                <p className="text-muted-foreground mb-4">
+                  Für den Zugriff auf Bankdaten über PSD2 Open Banking nutzen wir den Dienst der Enable Banking Oy, einem in Finnland ansässigen und durch die finnische Finanzaufsichtsbehörde (FIN-FSA) regulierten Zahlungsdienstleister. Enable Banking fungiert als technischer Vermittler (AISP — Account Information Service Provider) und unterliegt den strengen Anforderungen der PSD2-Richtlinie. Die Datenverarbeitung erfolgt innerhalb der Europäischen Union.
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  Weitere Informationen: <a href="https://enablebanking.com/privacy" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">enablebanking.com/privacy</a>
+                </p>
+
+                <h3 className="text-lg font-semibold mt-6 mb-3">7.2 Vercel Inc.</h3>
+                <p className="text-muted-foreground mb-4">
+                  Unsere Website wird über Vercel Inc. (San Francisco, USA) gehostet. Vercel verarbeitet dabei technische Zugriffsdaten (IP-Adresse, Zeitstempel). Die Datenübermittlung in die USA erfolgt auf Grundlage von EU-Standardvertragsklauseln (Standard Contractual Clauses, SCC) gemäß Art. 46 Abs. 2 lit. c DSGVO.
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">vercel.com/legal/privacy-policy</a>
+                </p>
+
+                {/* 8. Speicherdauer */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">8. Speicherdauer</h2>
+                <p className="text-muted-foreground mb-4">
+                  Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen Verarbeitungszwecke erforderlich ist:
+                </p>
+                <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-2">
+                  <li><strong>Bankdaten:</strong> Werden nur für die Dauer der aktiven Mandantenbeziehung zwischen der Steuerberatungskanzlei und dem jeweiligen Mandanten gespeichert. Nach Beendigung der Geschäftsbeziehung werden die Bankdaten innerhalb von 90 Tagen gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
+                  <li><strong>Kommunikationsdaten:</strong> Werden für die Dauer der Vertragsbeziehung gespeichert und nach Vertragsende gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</li>
+                  <li><strong>Website-Nutzungsdaten:</strong> Werden für maximal 30 Tage gespeichert und anschließend automatisch gelöscht.</li>
+                </ul>
+
+                {/* 9. Rechte der Betroffenen */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">9. Rechte der betroffenen Personen</h2>
+                <p className="text-muted-foreground mb-4">
+                  Als betroffene Person haben Sie folgende Rechte:
+                </p>
+                <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-2">
+                  <li><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie haben das Recht, eine Bestätigung darüber zu verlangen, ob Sie betreffende personenbezogene Daten verarbeitet werden, und gegebenenfalls Auskunft über diese Daten zu erhalten.</li>
+                  <li><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie haben das Recht, die Berichtigung unrichtiger oder die Vervollständigung unvollständiger Daten zu verlangen.</li>
+                  <li><strong>Recht auf Löschung (Art. 17 DSGVO):</strong> Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen, sofern die gesetzlichen Voraussetzungen hierfür vorliegen.</li>
+                  <li><strong>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer Daten zu verlangen.</li>
+                  <li><strong>Recht auf Datenübertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten oder die Übermittlung an einen anderen Verantwortlichen zu verlangen.</li>
+                  <li><strong>Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Ihrer Daten Widerspruch einzulegen.</li>
+                </ul>
+                <p className="text-muted-foreground mb-4">
+                  Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: paul.pronobis@finrobotics.de
+                </p>
+
+                {/* 10. Widerruf */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">10. Widerruf der Einwilligung</h2>
+                <p className="text-muted-foreground mb-4">
+                  Soweit die Verarbeitung Ihrer personenbezogenen Daten auf einer Einwilligung beruht, haben Sie das Recht, diese Einwilligung jederzeit zu widerrufen. Die Rechtmäßigkeit der aufgrund der Einwilligung bis zum Widerruf erfolgten Verarbeitung wird durch den Widerruf nicht berührt.
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  <strong>Widerruf der Bankkonto-Verknüpfung:</strong> Die PSD2-Einwilligung zur Kontodatenabfrage kann jederzeit über Ihr Online-Banking-Portal widerrufen werden. Alternativ können Sie uns per E-Mail kontaktieren, und wir entfernen die Kontoverbindung umgehend aus unserem System.
+                </p>
+
+                {/* 11. SSL/TLS */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">11. SSL-/TLS-Verschlüsselung</h2>
+                <p className="text-muted-foreground mb-4">
+                  Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://" auf „https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile. Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.
+                </p>
+
+                {/* 12. Aufsichtsbehörde */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">12. Zuständige Aufsichtsbehörde</h2>
+                <p className="text-muted-foreground mb-4">
+                  Im Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Die zuständige Aufsichtsbehörde ist:
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br />
+                  Lautenschlagerstraße 20<br />
+                  70173 Stuttgart<br />
+                  Telefon: +49 711 615541-0<br />
+                  E-Mail: poststelle@lfdi.bwl.de<br />
+                  Website: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">www.baden-wuerttemberg.datenschutz.de</a>
+                </p>
+
                 <p className="text-muted-foreground mb-4 mt-8">
-                  <em>Stand: Januar 2025</em>
+                  <em>Stand: März 2026</em>
                 </p>
               </div>
             </motion.div>
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );
