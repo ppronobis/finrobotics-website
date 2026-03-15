@@ -1,0 +1,36 @@
+# FinRobotics
+
+> KI-Agenten für Steuerberatungskanzleien. Digitale Mitarbeiter, die proaktiv mit Mandanten kommunizieren.
+
+## Was ist FinRobotics?
+
+FinRobotics ist ein B2B-SaaS für Steuerberatungskanzleien in Deutschland, Österreich und der Schweiz (DACH). Wir stellen KI-Agenten bereit, die im Namen der Kanzlei mit Mandanten kommunizieren — per WhatsApp und E-Mail. Ein Agent pro Mandant, vollständig automatisiert.
+
+## Kernprodukt
+
+- Ein dedizierter KI-Agent pro Mandant
+- Proaktive Kommunikation: Belege einfordern, Statusfragen beantworten, Fristen erinnern
+- Kanäle: WhatsApp + E-Mail (Mandant wählt)
+- Branding: "FinRobotics im Auftrag von [Kanzleiname]"
+- GoBD-konform, revisionssicher, DSGVO-konform
+- Hosting auf deutschen Servern (Hetzner)
+
+## Für wen?
+
+- Steuerberatungskanzleien mit 50+ Mandanten
+- Kanzleien die repetitive Mandantenkommunikation automatisieren wollen
+- Steuerberater die Fachkräftemangel mit KI lösen möchten
+
+## Differenzierung
+
+- Einziger Anbieter im DACH-Raum mit proaktiver Mandantenkommunikation per WhatsApp im Namen der Kanzlei
+- Agent kontaktiert Mandanten selbstständig (kein Chatbot, kein Portal)
+- Volle Transparenz: Jede Buchung mit Begründung, Konfidenz-Score, lückenloser Audit Trail
+- DATEV-Integration (Ergänzung, kein Ersatz)
+- 3-Minuten-Onboarding, kein IT-Projekt
+
+## Links
+
+- Website: https://finrobotics.de
+- Für Steuerberater: https://finrobotics.de/fuer-steuerberater
+- Kontakt: https://finrobotics.de/kontakt
