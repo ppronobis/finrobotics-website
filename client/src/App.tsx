@@ -5,8 +5,6 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import Funktionen from "./pages/Funktionen";
-import Preise from "./pages/Preise";
 import FuerSteuerberater from "./pages/FuerSteuerberater";
 import UeberUns from "./pages/UeberUns";
 import Impressum from "./pages/Impressum";
@@ -18,8 +16,6 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/funktionen" component={Funktionen} />
-      <Route path="/preise" component={Preise} />
       <Route path="/fuer-steuerberater" component={FuerSteuerberater} />
       <Route path="/ueber-uns" component={UeberUns} />
       <Route path="/impressum" component={Impressum} />

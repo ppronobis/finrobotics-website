@@ -6,8 +6,6 @@ export default function Footer() {
 
   const footerLinks = {
     produkt: [
-      { href: "/funktionen", label: "Funktionen" },
-      { href: "/preise", label: "Preise" },
       { href: "/fuer-steuerberater", label: "Für Steuerberater" },
       { href: "/kontakt", label: "Login" },
     ],

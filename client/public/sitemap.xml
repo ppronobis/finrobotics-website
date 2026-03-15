@@ -17,14 +17,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://finrobotics.de/funktionen</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://finrobotics.de/preise</loc>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://finrobotics.de/impressum</loc>
     <priority>0.3</priority>
   </url>
