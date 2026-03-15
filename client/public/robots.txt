@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# AI/LLM-readable content
+# See https://llmstxt.org for the specification
+LLMs-Txt: https://finrobotics.de/llms.txt
+
+Sitemap: https://finrobotics.de/sitemap.xml
