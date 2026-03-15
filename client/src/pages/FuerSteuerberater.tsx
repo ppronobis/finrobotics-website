@@ -11,18 +11,23 @@ import {
   CalendarCheck,
   Check,
   Clock,
+  Eye,
+  FileSearch,
   FileText,
   Globe,
+  History,
   Lock,
   Mail,
   MessageSquare,
   Send,
   Server,
   Shield,
+  ShieldCheck,
   UserPlus,
   Users,
   X,
 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 const painPoints = [
   {
@@ -96,6 +101,30 @@ const agentFeatures = [
     title: "Isoliert",
     description:
       "Jeder Mandant hat einen eigenen Agenten — ohne Datenvermischung zwischen Mandaten.",
+  },
+];
+
+const transparencyFeatures = [
+  {
+    icon: FileSearch,
+    title: "Buchungsbegründung",
+    description:
+      "Jede Buchung kommt mit einer klaren Begründung. Der Agent erklärt, warum er so gebucht hat — nachvollziehbar und prüfbar.",
+    example: "\u201EBewirtungskosten, weil Restaurant + Teilnehmerliste erkannt\u201C",
+  },
+  {
+    icon: Eye,
+    title: "Konfidenz-Score",
+    description:
+      "Jede Buchung hat einen Konfidenz-Wert. Ab 90%+ wird automatisch gebucht, darunter zur Prüfung markiert. Sie sehen immer, wie sicher sich die KI ist.",
+    example: "Konfidenz: 94% → automatisch gebucht",
+  },
+  {
+    icon: History,
+    title: "Audit Trail",
+    description:
+      "Lückenlose Dokumentation: Wer hat was wann gebucht oder freigegeben. GoBD-konform und revisionssicher.",
+    example: "Agent → gebucht am 14.02. um 09:12 Uhr",
   },
 ];
 
@@ -451,6 +480,148 @@ export default function FuerSteuerberater() {
                   </Card>
                 </motion.div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Transparenz Section */}
+        <section className="section bg-muted/30">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <h2 className="section-title">Volle Transparenz. Jede Buchung nachvollziehbar.</h2>
+              <p className="section-subtitle mx-auto">
+                Die häufigste Frage: „Kann ich der KI vertrauen?" — Unsere Antwort: Sie müssen nicht vertrauen. Sie können prüfen.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-10 items-start">
+              {/* Left: 3 Feature Cards */}
+              <div className="space-y-5">
+                {transparencyFeatures.map((feature, index) => (
+                  <motion.div
+                    key={feature.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <Card className="h-full">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="w-11 h-11 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <feature.icon className="h-5 w-5 text-secondary" />
+                          </div>
+                          <div>
+                            <h3 className="font-semibold mb-1.5">{feature.title}</h3>
+                            <p className="text-sm text-muted-foreground mb-2">{feature.description}</p>
+                            <p className="text-xs text-secondary font-medium italic">→ {feature.example}</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Right: Mockup Booking Card */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Card className="border-secondary/20 shadow-2xl overflow-hidden">
+                  <CardContent className="p-0">
+                    {/* Card Header */}
+                    <div className="bg-secondary/5 border-b px-5 py-3 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <ShieldCheck className="h-4 w-4 text-secondary" />
+                        <span className="text-sm font-semibold">Buchungsdetail</span>
+                      </div>
+                      <Badge variant="secondary" className="text-[11px] font-semibold">
+                        Automatisch gebucht
+                      </Badge>
+                    </div>
+
+                    <div className="p-5 space-y-5">
+                      {/* Booking Summary */}
+                      <div className="rounded-lg border bg-muted/30 p-4 space-y-3">
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-muted-foreground">Beleg</span>
+                          <span className="text-sm font-medium">Restaurant Löwen, 142,50 €</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-muted-foreground">Konto</span>
+                          <span className="text-sm font-medium">4650 · Bewirtungskosten</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-muted-foreground">Mandant</span>
+                          <span className="text-sm font-medium">Weber GmbH</span>
+                        </div>
+                      </div>
+
+                      {/* Begründung */}
+                      <div>
+                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Buchungsbegründung</p>
+                        <div className="rounded-lg bg-secondary/5 border border-secondary/15 px-4 py-3">
+                          <p className="text-sm text-foreground leading-relaxed">
+                            <span className="text-secondary font-medium">Bewirtungskosten</span> — Restaurant-Rechnung erkannt, 
+                            Teilnehmerliste im Beleg vorhanden. Betrag 142,50 € auf Konto 4650 gebucht. 
+                            Vorsteuer 19% = 22,77 € separat erfasst.
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Konfidenz */}
+                      <div>
+                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Konfidenz-Score</p>
+                        <div className="flex items-center gap-3">
+                          <div className="flex-1 h-2.5 bg-muted rounded-full overflow-hidden">
+                            <motion.div
+                              className="h-full bg-green-500 rounded-full"
+                              initial={{ width: "0%" }}
+                              whileInView={{ width: "94%" }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                            />
+                          </div>
+                          <span className="text-sm font-semibold text-green-600 tabular-nums">94%</span>
+                        </div>
+                        <p className="text-xs text-muted-foreground mt-1.5">
+                          ≥ 90% → automatisch gebucht · &lt; 90% → zur manuellen Prüfung
+                        </p>
+                      </div>
+
+                      {/* Audit Trail */}
+                      <div>
+                        <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Audit Trail</p>
+                        <div className="space-y-2">
+                          {[
+                            { time: "14.02.2025, 08:47", event: "Beleg empfangen via WhatsApp", actor: "Weber GmbH" },
+                            { time: "14.02.2025, 08:47", event: "OCR & Klassifikation abgeschlossen", actor: "Agent" },
+                            { time: "14.02.2025, 08:47", event: "Buchung erstellt (Konfidenz: 94%)", actor: "Agent" },
+                            { time: "14.02.2025, 09:12", event: "Buchung automatisch bestätigt", actor: "System" },
+                          ].map((entry, idx) => (
+                            <div key={idx} className="flex items-start gap-3 text-xs">
+                              <span className="text-muted-foreground tabular-nums whitespace-nowrap mt-0.5">{entry.time}</span>
+                              <div className="flex-1">
+                                <span className="text-foreground">{entry.event}</span>
+                                <span className="text-muted-foreground ml-1.5">· {entry.actor}</span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </div>
           </div>
         </section>
