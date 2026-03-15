@@ -37,14 +37,6 @@ const team = [
     image: "/images/tobi-headshot.png",
   },
   {
-    name: "Johannes Huhn",
-    role: "Technologie & Entwicklung",
-    description:
-      "Doktorand FU Bozen mit Expertise in Analytics und Enterprise Software. HANA, Java, Python.",
-    linkedin: "#",
-    image: "/team-huhn.png",
-  },
-  {
     name: "Martin Kusterer",
     role: "Operations & Data Engineering",
     description:
