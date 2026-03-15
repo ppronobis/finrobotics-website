@@ -281,7 +281,7 @@ export default function Home() {
                   className="relative pl-6 border-l-4 border-secondary"
                 >
                   <p className="text-lg md:text-xl font-medium italic text-foreground/90 leading-relaxed">
-                    „Einmal eingerichtet, erledigt die KI den Rest. Autonom."
+                    „Von Professoren gebaut, die Rechnungswesen lehren. Nicht von Entwicklern, die es googeln."
                   </p>
                 </motion.blockquote>
               </div>
