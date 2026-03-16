@@ -733,7 +733,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center">
                 <img
-                  src="/images/finrobotics-dashboard.png"
+                  src="/images/finrobotics-dashboard.jpg"
                   alt="Steuerberater-Integration"
                   className="max-w-sm rounded-xl shadow-lg"
                 />
