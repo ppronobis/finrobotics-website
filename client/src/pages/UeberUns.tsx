@@ -76,13 +76,13 @@ const milestones = [
     year: "2025",
     title: "iNEST Accelerator",
     event:
-      "Aufnahme in das iNEST Accelerator-Programm der Universität. Entwicklung der Multi-Agent-Architektur für Steuerberatungskanzleien.",
+      "Aufnahme in das iNEST Accelerator-Programm der Universität. Entwicklung der Multi-Agent-Architektur.",
   },
   {
     year: "2026",
     title: "Pilotphase",
     event:
-      "Erste Pilotprojekte mit Steuerberatungskanzleien. Launch der Plattform mit Banking-Integration und proaktiver Mandantenkommunikation.",
+      "Erste Pilotprojekte mit Kanzleien und Unternehmen. Launch der Plattform mit Banking-Integration und proaktiver Kommunikation.",
   },
   {
     year: "Zukunft",
@@ -124,7 +124,8 @@ export default function UeberUns() {
                 </h1>
                 <p className="text-lg md:text-xl text-white/80 max-w-2xl">
                   FinRobotics ist ein Spin-off der Freien Universität Bozen. Wir
-                  entwickeln KI-Agenten, die Steuerberatern die Routinearbeit abnehmen.
+                  entwickeln KI-Agenten, die Steuerberatern, Buchhaltungsbüros und
+                  Unternehmern die Routinearbeit abnehmen.
                 </p>
               </motion.div>
             </div>
@@ -160,8 +161,8 @@ export default function UeberUns() {
                     Freien Universität Bozen
                   </span>{" "}
                   im Bereich Accounting und Künstliche Intelligenz. Die Frage, die uns
-                  antrieb: Warum verbringen Steuerberater noch immer Stunden damit,
-                  Belege einzufordern und Routinebuchungen zu erstellen?
+                  antrieb: Warum verbringen Steuerberater, Buchhalter und Unternehmer
+                  noch immer Stunden mit Routinearbeit, die eine KI übernehmen könnte?
                 </p>
                 <p className="text-muted-foreground mb-5">
                   Unser Standort ist der{" "}
@@ -176,8 +177,8 @@ export default function UeberUns() {
                 </p>
                 <p className="text-muted-foreground">
                   Mit einem ESF+ Forschungszuschuss haben wir die Grundlagen gelegt.
-                  Jetzt bringen wir unsere Technologie in die Steuerberatungskanzleien,
-                  die sie am meisten brauchen.
+                  Jetzt bringen wir unsere Technologie zu den Kanzleien, Büros und
+                  Unternehmen, die sie am meisten brauchen.
                 </p>
               </motion.div>
 
@@ -215,18 +216,18 @@ export default function UeberUns() {
               >
                 <h2 className="section-title text-center">Unsere Mission</h2>
                 <p className="text-muted-foreground mb-6 text-lg text-center">
-                  80% der Arbeit in einer Steuerberatungskanzlei ist Routine: Belege
-                  sammeln, zuordnen, buchen, bei Mandanten nachfragen. Das kostet
-                  Zeit, die für echte Beratung fehlt.
+                  80% der Buchhaltungsarbeit ist Routine: Belege sammeln, zuordnen,
+                  buchen, nachfragen. Ob in der Kanzlei, im Buchhaltungsbüro oder
+                  im eigenen Unternehmen. Das kostet Zeit, die für Wichtigeres fehlt.
                 </p>
                 <p className="text-muted-foreground mb-6 text-lg text-center">
                   Wir bauen KI-Agenten, die diese Arbeit übernehmen. Nicht als
                   passives Tool, das auf Eingaben wartet, sondern als proaktiver
-                  digitaler Mitarbeiter. Ein Agent pro Mandant, der selbstständig
-                  kommuniziert, Belege einfordert und Buchungsvorschläge erstellt.
+                  digitaler Mitarbeiter, der selbstständig kommuniziert, Belege
+                  einfordert und Buchungsvorschläge erstellt.
                 </p>
                 <p className="text-foreground font-medium text-lg text-center">
-                  Unser Ziel: Steuerberater sollen beraten, nicht verwalten.
+                  Unser Ziel: Weniger Verwaltung. Mehr Zeit für das, was zählt.
                 </p>
               </motion.div>
             </div>
@@ -394,8 +395,8 @@ export default function UeberUns() {
                 Lassen Sie uns sprechen
               </h2>
               <p className="text-white/75 mb-8 text-lg">
-                Sie sind Steuerberater und wollen sehen, wie KI Ihre Kanzlei
-                entlastet? Wir zeigen es Ihnen.
+                Sie wollen Ihre Buchhaltung automatisieren? Ob Kanzlei,
+                Buchhaltungsbüro oder Unternehmen. Wir zeigen Ihnen wie.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
