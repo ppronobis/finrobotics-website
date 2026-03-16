@@ -188,13 +188,13 @@ export default function UeberUns() {
                 className="space-y-4"
               >
                 <img
-                  src="/images/noi-techpark-plaza.jpg"
-                  alt="NOI Techpark Plaza mit NOI-Skulptur"
+                  src="/images/noi-techpark-campus.jpg"
+                  alt="NOI Techpark Campus mit Blick auf die Alpen"
                   className="w-full rounded-xl shadow-lg"
                 />
                 <img
-                  src="/images/noi-techpark-campus.jpg"
-                  alt="NOI Techpark Campus mit Blick auf die Alpen"
+                  src="/images/noi-techpark-plaza.jpg"
+                  alt="NOI Techpark Plaza mit NOI-Skulptur"
                   className="w-full rounded-xl shadow-lg"
                 />
               </motion.div>
