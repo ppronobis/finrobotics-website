@@ -25,7 +25,7 @@ const team = [
     role: "Gründer & Strategie",
     description:
       "Professor für Accounting und KI an der Freien Universität Bozen. Verbindet akademische Forschung mit unternehmerischer Praxis.",
-    linkedin: "https://linkedin.com/in/paulpronobis",
+    linkedin: "https://it.linkedin.com/in/paul-pronobis",
     image: "/images/paul-headshot.png",
   },
   {
@@ -33,7 +33,7 @@ const team = [
     role: "KI & Architektur",
     description:
       "Senior Architect mit 18 Jahren IT-Erfahrung. ML/KI im Finanzsektor. Associate Prof ML an der ESCP Paris.",
-    linkedin: "https://linkedin.com/in/tobiaslæmmle",
+    linkedin: "https://de.linkedin.com/in/tobias-laemmle",
     image: "/images/tobi-headshot.png",
   },
   {
@@ -41,7 +41,7 @@ const team = [
     role: "Operations & Data Engineering",
     description:
       "Data Engineering und KI-Spezialist. IHK-zertifiziert als Master Professional, Business Data Professional und Big Data Engineer.",
-    linkedin: "#",
+    linkedin: "https://de.linkedin.com/in/martin-kusterer",
     image: "/team-kusterer.png",
   },
 ];
@@ -258,7 +258,7 @@ export default function UeberUns() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-4xl mx-auto">
               {team.map((member, index) => (
                 <motion.div
                   key={member.name}
