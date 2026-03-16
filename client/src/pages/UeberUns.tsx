@@ -105,7 +105,7 @@ export default function UeberUns() {
               src="/images/noi-techpark-building.jpg"
               alt="NOI Techpark Bozen mit Alpen-Panorama"
               className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectPosition: "center 10%" }}
+              style={{ objectPosition: "center 5%" }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
             <div className="relative h-full container flex flex-col justify-end pb-12 md:pb-16">
