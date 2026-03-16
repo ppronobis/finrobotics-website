@@ -6,16 +6,14 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Bot,
-  BrainCircuit,
-  Building2,
   CalendarCheck,
   GraduationCap,
-  Lightbulb,
   Linkedin,
-  Rocket,
-  Target,
-  Users,
+  MapPin,
+  Server,
+  Sparkles,
+  Microscope,
+  Shield,
   Zap,
 } from "lucide-react";
 
@@ -46,68 +44,51 @@ const team = [
   },
 ];
 
-const values = [
+const differentiators = [
   {
-    icon: GraduationCap,
-    title: "Akademische Exzellenz",
+    icon: Microscope,
+    title: "Forschung trifft Praxis",
     description:
-      "Als Spin-off der Freien Universität Bozen basiert unsere Technologie auf fundierter Forschung und wissenschaftlichen Erkenntnissen im Bereich Accounting und KI.",
+      "Unsere Technologie entsteht nicht im Vakuum. Sie basiert auf jahrelanger Forschung in Accounting und KI an der Freien Universität Bozen und wird direkt am Markt validiert.",
   },
   {
-    icon: Target,
-    title: "Kundenzentrierung",
+    icon: Shield,
+    title: "Deutsche Server. GoBD-konform.",
     description:
-      "Wir entwickeln FinRobotics für alle, die Buchhaltung effizienter gestalten wollen — Steuerberater, Unternehmer und Selbständige gleichermaßen.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Innovation",
-    description:
-      "Wir setzen auf proaktive KI-Agenten, die nicht nur digitalisieren, sondern eigenständig handeln — Belege einfordern, buchen und kommunizieren.",
-  },
-];
-
-const audiences = [
-  {
-    icon: Building2,
-    title: "Steuerberater",
-    description:
-      "Proaktive Mandantenkommunikation, automatische Belegerfassung und mehr Zeit für echte Beratung statt Routinearbeit.",
-  },
-  {
-    icon: Users,
-    title: "Unternehmer",
-    description:
-      "Automatisierte Belegverarbeitung und laufende Buchhaltung — ohne selbst daran denken zu müssen.",
+      "Alle Daten bleiben auf deutschen Servern. Unsere KI-Agenten arbeiten von Anfang an GoBD-konform und erfüllen die Anforderungen der Finanzverwaltung.",
   },
   {
     icon: Zap,
-    title: "Selbständige",
+    title: "Proaktiv statt passiv",
     description:
-      "EÜR ohne Aufwand. Belege abfotografieren, den Rest erledigt die KI. Fertig.",
+      "Unsere KI wartet nicht auf Eingaben. Sie fordert Belege selbstständig an, kommuniziert mit Mandanten per WhatsApp oder E-Mail und erstellt Buchungsvorschläge.",
   },
 ];
 
 const milestones = [
   {
     year: "2024",
-    title: "Gründung",
-    event: "Spin-off der Freien Universität Bozen. ESF+ Forschungszuschuss für KI in der Buchhaltung.",
+    title: "Forschungsprojekt",
+    event:
+      "Start als Forschungsprojekt an der Freien Universität Bozen. ESF+ Zuschuss für KI-gestützte Buchhaltungsautomatisierung.",
   },
   {
     year: "2025",
-    title: "Technologie",
-    event: "Entwicklung der KI-Agenten-Architektur. Erste funktionierende Prototypen.",
+    title: "iNEST Accelerator",
+    event:
+      "Aufnahme in das iNEST Accelerator-Programm der Universität. Entwicklung der Multi-Agent-Architektur für Steuerberatungskanzleien.",
   },
   {
     year: "2026",
     title: "Pilotphase",
-    event: "Pilotprojekte mit ersten Steuerberatungskanzleien und Unternehmen.",
+    event:
+      "Erste Pilotprojekte mit Steuerberatungskanzleien. Launch der Plattform mit Banking-Integration und proaktiver Mandantenkommunikation.",
   },
   {
     year: "Zukunft",
-    title: "Public Launch",
-    event: "Öffnung der Plattform für Steuerberater, Unternehmer und Selbständige.",
+    title: "Skalierung",
+    event:
+      "Expansion im DACH-Raum. Internationale Märkte. Aufbau eines Ökosystems für die digitale Steuerberatung.",
   },
 ];
 
@@ -117,91 +98,40 @@ export default function UeberUns() {
       <Header />
 
       <main className="flex-1">
-        {/* Hero */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-background to-muted/30">
-          <div className="container py-16 md:py-24 lg:py-32">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-center max-w-3xl mx-auto"
-            >
-              <div className="inline-flex items-center gap-2 bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium mb-6">
-                <GraduationCap className="h-4 w-4" />
-                Spin-off der Freien Universität Bozen
-              </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground mb-6">
-                KI-Agenten für die Finanzwelt.{" "}
-                <span className="text-secondary">Aus Forschung geboren.</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Wir automatisieren Buchhaltung für Steuerberater, Unternehmer und
-                Selbständige — mit KI-Agenten, die eigenständig handeln, kommunizieren
-                und buchen.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Mission */}
-        <section className="section">
-          <div className="container">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Hero with NOI Techpark Image */}
+        <section className="relative overflow-hidden">
+          <div className="relative h-[60vh] min-h-[400px] md:min-h-[500px]">
+            <img
+              src="/images/noi-techpark-building.jpg"
+              alt="NOI Techpark Bozen mit Alpen-Panorama"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+            <div className="relative h-full container flex flex-col justify-end pb-12 md:pb-16">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-3xl"
               >
-                <h2 className="section-title">Unsere Mission</h2>
-                <p className="text-muted-foreground mb-6">
-                  80% der Buchhaltungsarbeit ist repetitiv: Belege sammeln, zuordnen,
-                  buchen, nachfragen. Stunden, die Steuerberater, Unternehmer und
-                  Selbständige besser nutzen könnten.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  Wir glauben, dass KI diese Arbeit übernehmen kann — nicht als
-                  passives Tool, sondern als proaktiver Agent, der selbstständig
-                  kommuniziert, Belege einfordert und Buchungen erstellt.
-                </p>
-                <p className="text-foreground font-medium">
-                  Unsere Vision: Eine Welt, in der Buchhaltung keine Belastung mehr
-                  ist, sondern intelligent im Hintergrund passiert.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="flex justify-center"
-              >
-                <div className="grid grid-cols-2 gap-4 max-w-sm">
-                  {audiences.map((audience, index) => (
-                    <Card
-                      key={audience.title}
-                      className={`${index === 2 ? "col-span-2" : ""}`}
-                    >
-                      <CardContent className="p-5">
-                        <div className="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center mb-3">
-                          <audience.icon className="h-5 w-5 text-secondary" />
-                        </div>
-                        <h3 className="font-semibold text-sm mb-1">{audience.title}</h3>
-                        <p className="text-xs text-muted-foreground">
-                          {audience.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  ))}
+                <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-sm font-medium mb-5">
+                  <MapPin className="h-4 w-4" />
+                  NOI Techpark Bozen · iNEST Accelerator 2025
                 </div>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white mb-4">
+                  Entstanden an der Schnittstelle von Wissenschaft und Innovation.
+                </h1>
+                <p className="text-lg md:text-xl text-white/80 max-w-2xl">
+                  FinRobotics ist ein Spin-off der Freien Universität Bozen. Wir
+                  entwickeln KI-Agenten, die Steuerberatern die Routinearbeit abnehmen.
+                </p>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Values */}
-        <section className="section bg-muted/30">
+        {/* Wo wir herkommen */}
+        <section className="section">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -210,16 +140,118 @@ export default function UeberUns() {
               transition={{ duration: 0.5 }}
               className="text-center mb-12"
             >
-              <h2 className="section-title">Unsere Werte</h2>
+              <h2 className="section-title">Wo wir herkommen</h2>
               <p className="section-subtitle mx-auto">
-                Was uns antreibt und wie wir arbeiten.
+                Vom Forschungslabor in den Markt.
+              </p>
+            </motion.div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <p className="text-muted-foreground mb-5">
+                  FinRobotics entstand aus der Forschung an der{" "}
+                  <span className="text-foreground font-medium">
+                    Freien Universität Bozen
+                  </span>{" "}
+                  im Bereich Accounting und Künstliche Intelligenz. Die Frage, die uns
+                  antrieb: Warum verbringen Steuerberater noch immer Stunden damit,
+                  Belege einzufordern und Routinebuchungen zu erstellen?
+                </p>
+                <p className="text-muted-foreground mb-5">
+                  Unser Standort ist der{" "}
+                  <span className="text-foreground font-medium">NOI Techpark</span> in
+                  Bozen, Südtirols Innovationszentrum. Als Teil des{" "}
+                  <span className="text-foreground font-medium">
+                    iNEST Accelerator-Programms
+                  </span>{" "}
+                  (gefördert durch den PNRR) erhalten wir gezieltes Coaching,
+                  Zugang zu Investoren und ein Netzwerk aus Forschern und Gründern
+                  in Nordost-Italien.
+                </p>
+                <p className="text-muted-foreground">
+                  Mit einem ESF+ Forschungszuschuss haben wir die Grundlagen gelegt.
+                  Jetzt bringen wir unsere Technologie in die Steuerberatungskanzleien,
+                  die sie am meisten brauchen.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="space-y-4"
+              >
+                <img
+                  src="/images/noi-techpark-plaza.jpg"
+                  alt="NOI Techpark Plaza mit NOI-Skulptur"
+                  className="w-full rounded-xl shadow-lg"
+                />
+                <img
+                  src="/images/noi-techpark-campus.jpg"
+                  alt="NOI Techpark Campus mit Blick auf die Alpen"
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mission */}
+        <section className="section bg-muted/30">
+          <div className="container">
+            <div className="max-w-3xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <h2 className="section-title text-center">Unsere Mission</h2>
+                <p className="text-muted-foreground mb-6 text-lg text-center">
+                  80% der Arbeit in einer Steuerberatungskanzlei ist Routine: Belege
+                  sammeln, zuordnen, buchen, bei Mandanten nachfragen. Das kostet
+                  Zeit, die für echte Beratung fehlt.
+                </p>
+                <p className="text-muted-foreground mb-6 text-lg text-center">
+                  Wir bauen KI-Agenten, die diese Arbeit übernehmen. Nicht als
+                  passives Tool, das auf Eingaben wartet, sondern als proaktiver
+                  digitaler Mitarbeiter. Ein Agent pro Mandant, der selbstständig
+                  kommuniziert, Belege einfordert und Buchungsvorschläge erstellt.
+                </p>
+                <p className="text-foreground font-medium text-lg text-center">
+                  Unser Ziel: Steuerberater sollen beraten, nicht verwalten.
+                </p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Was uns unterscheidet */}
+        <section className="section">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-12"
+            >
+              <h2 className="section-title">Was uns unterscheidet</h2>
+              <p className="section-subtitle mx-auto">
+                Drei Prinzipien, die unsere Arbeit leiten.
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-6">
-              {values.map((value, index) => (
+              {differentiators.map((item, index) => (
                 <motion.div
-                  key={value.title}
+                  key={item.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -228,11 +260,11 @@ export default function UeberUns() {
                   <Card className="h-full text-center">
                     <CardContent className="p-6">
                       <div className="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mx-auto mb-4">
-                        <value.icon className="h-7 w-7 text-secondary" />
+                        <item.icon className="h-7 w-7 text-secondary" />
                       </div>
-                      <h3 className="text-lg font-semibold mb-2">{value.title}</h3>
+                      <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                       <p className="text-muted-foreground text-sm">
-                        {value.description}
+                        {item.description}
                       </p>
                     </CardContent>
                   </Card>
@@ -243,7 +275,7 @@ export default function UeberUns() {
         </section>
 
         {/* Team */}
-        <section className="section">
+        <section className="section bg-muted/30">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -302,7 +334,7 @@ export default function UeberUns() {
         </section>
 
         {/* Timeline */}
-        <section className="section bg-muted/30">
+        <section className="section">
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -336,7 +368,7 @@ export default function UeberUns() {
                         {milestone.year}
                       </span>
                       <span className="text-sm font-semibold text-foreground">
-                        — {milestone.title}
+                        {milestone.title}
                       </span>
                     </div>
                     <p className="text-sm text-muted-foreground">{milestone.event}</p>
@@ -361,8 +393,8 @@ export default function UeberUns() {
                 Lassen Sie uns sprechen
               </h2>
               <p className="text-white/75 mb-8 text-lg">
-                Ob Steuerberater, Unternehmer oder Selbständiger — wir zeigen Ihnen,
-                wie KI Ihre Buchhaltung transformiert.
+                Sie sind Steuerberater und wollen sehen, wie KI Ihre Kanzlei
+                entlastet? Wir zeigen es Ihnen.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
