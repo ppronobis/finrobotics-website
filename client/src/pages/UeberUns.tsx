@@ -148,7 +148,8 @@ export default function UeberUns() {
               </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Row 1: Text left, Image right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -164,6 +165,43 @@ export default function UeberUns() {
                   antrieb: Warum verbringen Steuerberater, Buchhalter und Unternehmer
                   noch immer Stunden mit Routinearbeit, die eine KI übernehmen könnte?
                 </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src="/images/noi-techpark-campus.jpg"
+                  alt="NOI Techpark Campus mit Blick auf die Alpen"
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </motion.div>
+            </div>
+
+            {/* Row 2: Image left, Text right */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <img
+                  src="/images/noi-techpark-plaza.jpg"
+                  alt="NOI Techpark Plaza mit NOI-Skulptur"
+                  className="w-full rounded-xl shadow-lg"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
                 <p className="text-muted-foreground mb-5">
                   Unser Standort ist der{" "}
                   <span className="text-foreground font-medium">NOI Techpark</span> in
@@ -180,25 +218,6 @@ export default function UeberUns() {
                   Jetzt bringen wir unsere Technologie zu den Kanzleien, Büros und
                   Unternehmen, die sie am meisten brauchen.
                 </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="space-y-4"
-              >
-                <img
-                  src="/images/noi-techpark-campus.jpg"
-                  alt="NOI Techpark Campus mit Blick auf die Alpen"
-                  className="w-full rounded-xl shadow-lg"
-                />
-                <img
-                  src="/images/noi-techpark-plaza.jpg"
-                  alt="NOI Techpark Plaza mit NOI-Skulptur"
-                  className="w-full rounded-xl shadow-lg"
-                />
               </motion.div>
             </div>
           </div>
