@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Linkedin, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -7,7 +7,6 @@ export default function Footer() {
   const footerLinks = {
     produkt: [
       { href: "/fuer-steuerberater", label: "Für Steuerberater" },
-      { href: "/kontakt", label: "Login" },
     ],
     unternehmen: [
       { href: "/ueber-uns", label: "Über uns" },
@@ -17,15 +16,13 @@ export default function Footer() {
       { href: "/impressum", label: "Impressum" },
       { href: "/datenschutz", label: "Datenschutz" },
       { href: "/agb", label: "AGB" },
-      { href: "/privacy", label: "Privacy Policy" },
-      { href: "/terms", label: "Terms of Service" },
     ],
   };
 
   return (
     <footer className="border-t border-border bg-muted/30">
       <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
           {/* Logo & Description */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
@@ -54,41 +51,15 @@ export default function Footer() {
               >
                 <Linkedin className="h-4 w-4 text-muted-foreground" />
               </a>
-              <a
-                href="https://twitter.com/finrobotics"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-md bg-muted hover:bg-muted/80 transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-4 w-4 text-muted-foreground" />
-              </a>
             </div>
           </div>
 
-          {/* Produkt */}
+          {/* Navigation */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Produkt</h4>
+            <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-3">
-              {footerLinks.produkt.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Unternehmen */}
-          <div>
-            <h4 className="font-semibold text-foreground mb-4">Unternehmen</h4>
-            <ul className="space-y-3">
-              {footerLinks.unternehmen.map((link) => (
-                <li key={link.href}>
+              {[...footerLinks.produkt, ...footerLinks.unternehmen].map((link) => (
+                <li key={link.href + link.label}>
                   <Link
                     href={link.href}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors"
