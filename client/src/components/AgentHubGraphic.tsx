@@ -315,7 +315,7 @@ export default function AgentHubGraphic() {
         {/* Mini hub graphic */}
         <svg
           viewBox={`0 0 ${SVG_SIZE_MOBILE} ${SVG_SIZE_MOBILE}`}
-          className="w-48 h-48"
+          className="w-64 h-64"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
@@ -330,7 +330,7 @@ export default function AgentHubGraphic() {
           </defs>
           {/* Glow */}
           <motion.circle
-            cx={SVG_SIZE_MOBILE / 2} cy={SVG_SIZE_MOBILE / 2} r={80}
+            cx={SVG_SIZE_MOBILE / 2} cy={SVG_SIZE_MOBILE / 2} r={110}
             fill="url(#hubGlowMobile)"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: [0.3, 0.6, 0.3] } : {}}
@@ -338,10 +338,10 @@ export default function AgentHubGraphic() {
           />
           {/* Hub */}
           <motion.circle
-            cx={SVG_SIZE_MOBILE / 2} cy={SVG_SIZE_MOBILE / 2} r={56}
+            cx={SVG_SIZE_MOBILE / 2} cy={SVG_SIZE_MOBILE / 2} r={80}
             fill="url(#hubGradientMobile)"
             stroke="#14b8a6"
-            strokeWidth={2}
+            strokeWidth={2.5}
             initial={{ scale: 0 }}
             animate={inView ? { scale: 1 } : {}}
             transition={{ type: "spring", stiffness: 200, damping: 20 }}
@@ -350,8 +350,8 @@ export default function AgentHubGraphic() {
           {/* Small radiating lines */}
           {Array.from({ length: 8 }).map((_, i) => {
             const angle = (2 * Math.PI * i) / 8 - Math.PI / 2;
-            const innerR = 62;
-            const outerR = 100;
+            const innerR = 86;
+            const outerR = 130;
             const mcx = SVG_SIZE_MOBILE / 2;
             const mcy = SVG_SIZE_MOBILE / 2;
             return (
@@ -362,7 +362,7 @@ export default function AgentHubGraphic() {
                 x2={mcx + outerR * Math.cos(angle)}
                 y2={mcy + outerR * Math.sin(angle)}
                 stroke="#0D9488"
-                strokeWidth={2}
+                strokeWidth={2.5}
                 strokeOpacity={0.3}
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}
@@ -372,16 +372,22 @@ export default function AgentHubGraphic() {
             );
           })}
           {/* Icon */}
-          <foreignObject x={SVG_SIZE_MOBILE / 2 - 20} y={SVG_SIZE_MOBILE / 2 - 28} width={40} height={36}>
+          <foreignObject x={SVG_SIZE_MOBILE / 2 - 24} y={SVG_SIZE_MOBILE / 2 - 36} width={48} height={48}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>
-              <Bot size={32} color="white" strokeWidth={2} />
+              <Bot size={42} color="white" strokeWidth={2} />
             </div>
           </foreignObject>
           <text
-            x={SVG_SIZE_MOBILE / 2} y={SVG_SIZE_MOBILE / 2 + 20}
-            textAnchor="middle" fill="white" fontSize={12} fontWeight={600} fontFamily="system-ui, sans-serif"
+            x={SVG_SIZE_MOBILE / 2} y={SVG_SIZE_MOBILE / 2 + 22}
+            textAnchor="middle" fill="white" fontSize={16} fontWeight={600} fontFamily="system-ui, sans-serif"
           >
-            FinRobotics Agent
+            FinRobotics
+          </text>
+          <text
+            x={SVG_SIZE_MOBILE / 2} y={SVG_SIZE_MOBILE / 2 + 42}
+            textAnchor="middle" fill="white" fontSize={16} fontWeight={600} fontFamily="system-ui, sans-serif"
+          >
+            Agent
           </text>
         </svg>
 
