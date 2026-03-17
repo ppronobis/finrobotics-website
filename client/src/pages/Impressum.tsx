@@ -18,18 +18,14 @@ export default function Impressum() {
               <h1 className="text-4xl font-semibold tracking-tight mb-8">Impressum</h1>
               
               <div className="prose prose-slate max-w-none">
-                <h2 className="text-xl font-semibold mt-8 mb-4">Angaben gemäß § 5 TMG</h2>
+                <h2 className="text-xl font-semibold mt-8 mb-4">Angaben gemäß § 5 TMG / Art. 7 D.Lgs. 70/2003</h2>
                 <p className="text-muted-foreground mb-4">
-                  FinRobotics GmbH (i.Gr.)<br />
+                  FinRobotics<br />
+                  Prof. Dr. Paul Pronobis<br />
                   c/o Freie Universität Bozen<br />
                   Universitätsplatz 1<br />
                   39100 Bozen<br />
                   Italien
-                </p>
-                
-                <h2 className="text-xl font-semibold mt-8 mb-4">Vertreten durch</h2>
-                <p className="text-muted-foreground mb-4">
-                  Prof. Dr. Paul Pronobis (Geschäftsführer)
                 </p>
                 
                 <h2 className="text-xl font-semibold mt-8 mb-4">Kontakt</h2>
@@ -37,18 +33,7 @@ export default function Impressum() {
                   E-Mail: paul.pronobis@finrobotics.de
                 </p>
                 
-                <h2 className="text-xl font-semibold mt-8 mb-4">Umsatzsteuer-ID</h2>
-                <p className="text-muted-foreground mb-4">
-                  Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-                  [In Beantragung]
-                </p>
-                
-                <h2 className="text-xl font-semibold mt-8 mb-4">Handelsregister</h2>
-                <p className="text-muted-foreground mb-4">
-                  [In Gründung]
-                </p>
-                
-                <h2 className="text-xl font-semibold mt-8 mb-4">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+                <h2 className="text-xl font-semibold mt-8 mb-4">Verantwortlich für den Inhalt</h2>
                 <p className="text-muted-foreground mb-4">
                   Prof. Dr. Paul Pronobis<br />
                   c/o Freie Universität Bozen<br />
