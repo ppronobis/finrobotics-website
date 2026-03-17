@@ -56,8 +56,8 @@ export default function Kontakt() {
     {
       icon: Mail,
       title: "E-Mail",
-      value: "hello@finrobotics.de",
-      href: "mailto:hello@finrobotics.de",
+      value: "paul.pronobis@finrobotics.de",
+      href: "mailto:paul.pronobis@finrobotics.de",
     },
     {
       icon: MapPin,
@@ -229,7 +229,7 @@ export default function Kontakt() {
                       Möchtest du FinRobotics in Aktion sehen? Wir zeigen dir gerne in einer persönlichen Demo, wie du deine Buchhaltung automatisieren kannst.
                     </p>
                     <Button variant="outline" className="w-full" asChild>
-                      <a href="mailto:hello@finrobotics.de?subject=Demo-Anfrage">
+                      <a href="mailto:paul.pronobis@finrobotics.de?subject=Demo-Anfrage">
                         Demo anfragen
                       </a>
                     </Button>

@@ -34,7 +34,7 @@ export default function Impressum() {
                 
                 <h2 className="text-xl font-semibold mt-8 mb-4">Kontakt</h2>
                 <p className="text-muted-foreground mb-4">
-                  E-Mail: hello@finrobotics.de
+                  E-Mail: paul.pronobis@finrobotics.de
                 </p>
                 
                 <h2 className="text-xl font-semibold mt-8 mb-4">Umsatzsteuer-ID</h2>
