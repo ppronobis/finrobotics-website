@@ -27,13 +27,17 @@ export default function Datenschutz() {
                 <p className="text-muted-foreground mb-4">
                   FinRobotics<br />
                   Prof. Dr. Paul Pronobis<br />
+                  c/o Freie Universität Bozen<br />
+                  Universitätsplatz 1<br />
+                  39100 Bozen, Südtirol<br />
+                  Italien<br />
                   E-Mail: paul.pronobis@finrobotics.de
                 </p>
 
-                {/* 2. Datenschutzbeauftragter */}
-                <h2 className="text-xl font-semibold mt-8 mb-4">2. Datenschutzbeauftragter</h2>
+                {/* 2. Ansprechpartner für Datenschutz */}
+                <h2 className="text-xl font-semibold mt-8 mb-4">2. Ansprechpartner für Datenschutz</h2>
                 <p className="text-muted-foreground mb-4">
-                  Ansprechpartner für Datenschutzanfragen:<br />
+                  Bei Fragen zum Datenschutz wenden Sie sich bitte an:<br />
                   Prof. Dr. Paul Pronobis<br />
                   E-Mail: paul.pronobis@finrobotics.de
                 </p>
@@ -132,6 +136,14 @@ export default function Datenschutz() {
                   Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">vercel.com/legal/privacy-policy</a>
                 </p>
 
+                <h3 className="text-lg font-semibold mt-6 mb-3">7.3 Hetzner Online GmbH</h3>
+                <p className="text-muted-foreground mb-4">
+                  Für das Hosting unserer Anwendungsdaten und KI-Agenten nutzen wir Server der Hetzner Online GmbH (Gunzenhausen, Deutschland). Die Datenverarbeitung erfolgt ausschließlich in deutschen Rechenzentren und damit innerhalb der Europäischen Union. Hetzner ist nach ISO 27001 zertifiziert.
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  Weitere Informationen: <a href="https://www.hetzner.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">hetzner.com/legal/privacy-policy</a>
+                </p>
+
                 {/* 8. Speicherdauer */}
                 <h2 className="text-xl font-semibold mt-8 mb-4">8. Speicherdauer</h2>
                 <p className="text-muted-foreground mb-4">
@@ -178,15 +190,24 @@ export default function Datenschutz() {
                 {/* 12. Aufsichtsbehörde */}
                 <h2 className="text-xl font-semibold mt-8 mb-4">12. Zuständige Aufsichtsbehörde</h2>
                 <p className="text-muted-foreground mb-4">
-                  Im Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu. Die zuständige Aufsichtsbehörde ist:
+                  Im Falle datenschutzrechtlicher Verstöße steht dem Betroffenen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Baden-Württemberg<br />
-                  Lautenschlagerstraße 20<br />
-                  70173 Stuttgart<br />
-                  Telefon: +49 711 615541-0<br />
-                  E-Mail: poststelle@lfdi.bwl.de<br />
-                  Website: <a href="https://www.baden-wuerttemberg.datenschutz.de" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">www.baden-wuerttemberg.datenschutz.de</a>
+                  <strong>Nationale Aufsichtsbehörde (Italien):</strong><br />
+                  Garante per la protezione dei dati personali<br />
+                  Piazza Venezia 11<br />
+                  00187 Rom, Italien<br />
+                  Telefon: +39 06 696771<br />
+                  E-Mail: protocollo@gpdp.it<br />
+                  Website: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">www.garanteprivacy.it</a>
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  <strong>Anlaufstelle in Südtirol:</strong><br />
+                  Für Bürgerinnen und Bürger in Südtirol steht die Verbraucherzentrale Südtirol als Anlaufstelle zur Verfügung:<br />
+                  Verbraucherzentrale Südtirol (VZS)<br />
+                  Zwölfmalgreiner Straße 2<br />
+                  39100 Bozen, Südtirol<br />
+                  Website: <a href="https://www.consumer.bz.it" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:underline">www.consumer.bz.it</a>
                 </p>
 
                 <p className="text-muted-foreground mb-4 mt-8">
