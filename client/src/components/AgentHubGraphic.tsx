@@ -33,9 +33,9 @@ const NODES: HubNode[] = [
 
 // ─── Geometry helpers ───────────────────────────────────────────────
 const NODE_COUNT = NODES.length;
-const HUB_RADIUS_DESKTOP = 320;
+const HUB_RADIUS_DESKTOP = 250;
 const HUB_RADIUS_MOBILE = 140;
-const SVG_SIZE_DESKTOP = 860;
+const SVG_SIZE_DESKTOP = 720;
 const SVG_SIZE_MOBILE = 380;
 const CENTER = { x: 0.5, y: 0.5 }; // relative center
 
@@ -120,12 +120,12 @@ function ConnectionLine({
 
 // ─── Central hub ────────────────────────────────────────────────────
 function CentralHub({ cx, cy, inView }: { cx: number; cy: number; inView: boolean }) {
-  const hubRadius = 64;
+  const hubRadius = 80;
   return (
     <g>
       {/* Glow */}
       <motion.circle
-        cx={cx} cy={cy} r={hubRadius + 24}
+        cx={cx} cy={cy} r={hubRadius + 28}
         fill="url(#hubGlow)"
         initial={{ opacity: 0, scale: 0.6 }}
         animate={inView ? { opacity: [0.3, 0.6, 0.3], scale: 1 } : {}}
@@ -144,14 +144,17 @@ function CentralHub({ cx, cy, inView }: { cx: number; cy: number; inView: boolea
         style={{ transformOrigin: `${cx}px ${cy}px` }}
       />
       {/* Bot icon placeholder — rendered as foreignObject */}
-      <foreignObject x={cx - 22} y={cy - 30} width={44} height={44}>
+      <foreignObject x={cx - 24} y={cy - 36} width={48} height={48}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>
-          <Bot size={38} color="white" strokeWidth={2} />
+          <Bot size={42} color="white" strokeWidth={2} />
         </div>
       </foreignObject>
-      {/* Label */}
+      {/* Label - two lines */}
       <text x={cx} y={cy + 24} textAnchor="middle" fill="white" fontSize={14} fontWeight={600} fontFamily="system-ui, sans-serif">
-        FinRobotics Agent
+        FinRobotics
+      </text>
+      <text x={cx} y={cy + 40} textAnchor="middle" fill="white" fontSize={14} fontWeight={600} fontFamily="system-ui, sans-serif">
+        Agent
       </text>
     </g>
   );
@@ -164,7 +167,7 @@ function OuterNode({
   node: HubNode; x: number; y: number; index: number; inView: boolean;
 }) {
   const NodeIcon = node.icon;
-  const nodeRadius = 50;
+  const nodeRadius = 56;
 
   return (
     <motion.g
@@ -190,14 +193,14 @@ function OuterNode({
         whileHover={{ opacity: 0.6 }}
       />
       {/* Icon */}
-      <foreignObject x={x - 16} y={y - 22} width={32} height={32}>
+      <foreignObject x={x - 18} y={y - 20} width={36} height={36}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "100%", height: "100%" }}>
-          <NodeIcon size={28} style={{ color: "var(--foreground, #1e293b)" }} strokeWidth={1.8} />
+          <NodeIcon size={30} style={{ color: "var(--foreground, #1e293b)" }} strokeWidth={1.8} />
         </div>
       </foreignObject>
       {/* Label */}
       <text
-        x={x} y={y + 16}
+        x={x} y={y + 24}
         textAnchor="middle"
         fill="var(--foreground, #1e293b)"
         fontSize={12}
@@ -205,16 +208,6 @@ function OuterNode({
         fontFamily="system-ui, sans-serif"
       >
         {node.label}
-      </text>
-      {/* Sublabel */}
-      <text
-        x={x} y={y + 30}
-        textAnchor="middle"
-        fill="var(--muted-foreground, #64748b)"
-        fontSize={10}
-        fontFamily="system-ui, sans-serif"
-      >
-        {node.sublabel}
       </text>
     </motion.g>
   );
@@ -259,7 +252,7 @@ export default function AgentHubGraphic() {
   return (
     <div ref={containerRef} className="w-full flex flex-col items-center">
       {/* ── Desktop / Tablet: SVG hub ──────────────────────────── */}
-      <div className="hidden md:block w-full max-w-[860px]">
+      <div className="hidden md:block w-full max-w-[720px]">
         <svg
           viewBox={`0 0 ${SVG_SIZE_DESKTOP} ${SVG_SIZE_DESKTOP}`}
           className="w-full h-auto"
