@@ -192,7 +192,7 @@ export default function HeroChatbot() {
         {
           id: nextId(),
           type: "bot",
-          text: "Du hast das Nachrichtenlimit für diese Session erreicht. Schreib uns per WhatsApp (https://wa.me/491721084289) oder E-Mail (info@finrobotics.de) für weitere Fragen! 💬",
+          text: "Du hast das Nachrichtenlimit für diese Session erreicht. Schreib uns per WhatsApp (https://wa.me/491721084289) oder E-Mail (paul.pronobis@finrobotics.de) für weitere Fragen! 💬",
         },
       ]);
       setInputValue("");

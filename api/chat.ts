@@ -24,7 +24,7 @@ So sprichst du:
 
 Kontakt:
 - WhatsApp: https://wa.me/491721084289
-- E-Mail: info@finrobotics.de
+- E-Mail: paul.pronobis@finrobotics.de
 - Schreibe Links immer als vollständige URLs (https://...) damit sie klickbar sind
 - Leite sanft zum Kontakt über — nicht aufdringlich, sondern als natürlicher nächster Schritt
 
