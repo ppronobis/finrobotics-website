@@ -406,7 +406,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Agent Hub – Interaktive Grafik */}
+        {/* Alles auf einen Blick – Feature-Section */}
         <section className="section bg-muted/20">
           <div className="container">
             <motion.div
@@ -414,12 +414,63 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center mb-8"
+              className="text-center mb-14"
             >
-              <h2 className="section-title">Dein Agent. Alles verbunden.</h2>
-              <p className="section-subtitle">Ein digitaler Mitarbeiter, der alle deine Systeme orchestriert.</p>
+              <h2 className="section-title">Alles auf einen Blick</h2>
+              <p className="section-subtitle">Die wichtigsten Funktionen, die deine Buchhaltung automatisieren.</p>
             </motion.div>
-            <AgentHubGraphic />
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-10">
+              {[
+                {
+                  icon: Camera,
+                  title: "Automatische Belegerfassung",
+                  text: "Fotografiere Belege oder leite Rechnungen per E-Mail weiter. Dein Agent erkennt Betrag, Datum und Kategorie automatisch.",
+                },
+                {
+                  icon: Building2,
+                  title: "Bank-Integration",
+                  text: "Verbinde dein Geschäftskonto. Transaktionen werden automatisch abgeglichen und kategorisiert.",
+                },
+                {
+                  icon: Bot,
+                  title: "Lernt deine Muster",
+                  text: "Dein digitaler Mitarbeiter lernt deine Buchungsmuster und wird mit jeder Transaktion genauer.",
+                },
+                {
+                  icon: BarChart3,
+                  title: "Voller Überblick — jederzeit",
+                  text: "Gewinn, Liquidität, USt-Vorauszahlung – immer aktuell, immer im Blick.",
+                },
+                {
+                  icon: MessageSquare,
+                  title: "Frag deinen Agent",
+                  text: "Stell Fragen wie 'Wie viel Umsatz habe ich im Q3 gemacht?' — und bekomme sofort Antworten.",
+                },
+                {
+                  icon: FileOutput,
+                  title: "ELSTER & DATEV Export",
+                  text: "Ein Klick für den ELSTER-Export. Oder sende alles direkt an deinen Steuerberater via DATEV.",
+                },
+              ].map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: index * 0.08 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-11 h-11 rounded-full bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="h-5 w-5 text-secondary" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold mb-1 text-foreground">{feature.title}</h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">{feature.text}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -664,17 +715,17 @@ export default function Home() {
         </section>
 
         {/* Steuerberater Teaser */}
-        <section className="section bg-primary text-primary-foreground">
+        <section className="section bg-muted/30">
           <div className="container">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-semibold mb-4">
+                <h2 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
                   Für Steuerberater: Mehr Mandanten, weniger Aufwand
                 </h2>
-                <p className="text-primary-foreground/80 mb-6">
+                <p className="text-muted-foreground mb-6">
                   Ihre Mandanten nutzen FinRobotics für die Vorarbeit. Sie erhalten perfekt aufbereitete DATEV-Exporte. Win-Win.
                 </p>
-                <Button variant="secondary" size="lg" asChild>
+                <Button variant="default" size="lg" asChild>
                   <Link href="/fuer-steuerberater">
                     Zum Partnerprogramm
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -682,11 +733,7 @@ export default function Home() {
                 </Button>
               </div>
               <div className="flex justify-center">
-                <img
-                  src="/images/finrobotics-dashboard.jpg"
-                  alt="Steuerberater-Integration"
-                  className="max-w-sm rounded-xl shadow-lg"
-                />
+                <AgentHubGraphic />
               </div>
             </div>
           </div>
