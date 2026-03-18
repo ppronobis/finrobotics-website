@@ -9,6 +9,7 @@ export default function Header() {
   const [location] = useLocation();
 
   const navLinks = [
+    { href: "/", label: "Für Unternehmen" },
     { href: "/fuer-steuerberater", label: "Für Steuerberater" },
     { href: "/ueber-uns", label: "Über uns" },
   ];
