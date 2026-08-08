@@ -208,7 +208,7 @@ export default function FuerSteuerberater() {
                   </Button>
                   <Button size="lg" variant="outline" asChild>
                     <a
-                      href="https://cal.com/paul-pronobis-0704/30min"
+                      href="https://cal.com/paul-pronobis-0704/finrobotics"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -732,7 +732,7 @@ export default function FuerSteuerberater() {
                 </Button>
                 <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
                   <a
-                    href="https://cal.com/paul-pronobis-0704/30min"
+                    href="https://cal.com/paul-pronobis-0704/finrobotics"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

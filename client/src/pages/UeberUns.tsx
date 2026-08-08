@@ -435,7 +435,7 @@ export default function UeberUns() {
                   asChild
                 >
                   <a
-                    href="https://cal.com/paul-pronobis-0704/30min"
+                    href="https://cal.com/paul-pronobis-0704/finrobotics"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
